@@ -6,7 +6,8 @@ COPY requirements.txt /requirements.txt
 
 RUN cd /
 RUN pip3 install -U pip && pip3 install -U -r requirements.txt
-RUN mkdir /Evamaria 
-WORKDIR /Evamaria 
+WORKDIR /reponame
+
 COPY . .
-CMD ["/bin/bash", "/start.sh"]
+
+CMD ["python3", "bot.py"]
