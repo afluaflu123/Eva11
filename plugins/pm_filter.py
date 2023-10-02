@@ -101,7 +101,7 @@ async def next_page(bot, query):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'⎙ Fɪʟᴇs: {total}', 'dupe'),
+            InlineKeyboardButton(f'⎙ Fɪʟᴇs: {total}', 'neosub'),
             InlineKeyboardButton(f'⟮ Iɴꜰᴏ ⟯', 'reqinfo')
         ]
     )
@@ -469,7 +469,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
             InlineKeyboardButton('👨🏻‍🎓 Bᴏᴛ Oᴡɴᴇʀ', callback_data="owner_info")
             ],[      
-            InlineKeyboardButton('💠 Hᴇʟᴘ', callback_data='help2'),
+            InlineKeyboardButton('💠 Hᴇʟᴘ', callback_data='help'),
             InlineKeyboardButton('🌿 Aʙᴏᴜᴛ', callback_data='about')
             ],[
             InlineKeyboardButton('🎭 Tᴇᴀᴍ Kʟ Oꜰꜰɪᴄɪᴀʟ Lɪɴᴋs 🎭', callback_data="group_info")
@@ -483,8 +483,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('Piracy Is Crime')
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('Fɪʟᴛᴇʀs', callback_data='filters'),
-            InlineKeyboardButton('Fɪʟᴇ Sᴛᴏʀᴇ', callback_data='store_file')
+            InlineKeyboardButton('Mᴀɴᴜᴇʟ Fɪʟᴛᴇʀ', callback_data='manuelfilter'),
+            InlineKeyboardButton('Aᴜᴛᴏ Fɪʟᴛᴇʀ', callback_data='autofilter')
         ], [
             InlineKeyboardButton('Cᴏɴɴᴇᴄᴛɪᴏɴꜱ', callback_data='coct'),
             InlineKeyboardButton('Exᴛʀᴀ Mᴏᴅꜱ', callback_data='extra')   
