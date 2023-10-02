@@ -27,8 +27,10 @@ async def start(client, message):
                 InlineKeyboardButton('• ᴄʜᴇᴄᴋ ᴘᴍ •', url=f"https://t.me/{temp.U_NAME}?start=help"),
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
-        await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
+        k = await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
+        await asyncio.sleep(3) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
+        await k.delete()
+        await message.delete()
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
             await client.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, "Unknown"))       
@@ -48,11 +50,15 @@ async def start(client, message):
             InlineKeyboardButton('🥇 ᴛᴇᴀᴍ ᴋʟ ᴏꜰꜰɪᴄɪᴀʟ ʟɪɴᴋs 🥇', callback_data="group_info")
         ]]         
         reply_markup = InlineKeyboardMarkup(buttons)
-        kd = await message.reply_photo(
-        photo=random.choice(PICS),
-        caption=script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
-        await asyncio.sleep(6)
-        await kd.delete()
+        m=await message.reply_sticker("CAACAgIAAxkBAAE5teNk03mdcUwZgk5r0t7O_axeVvG_-wACJAwAAviQOEiWAywHzwABlxgeBA") 
+        await asyncio.sleep(3)
+        await m.delete()
+        await message.reply_photo(
+            photo=random.choice(PICS),
+            caption=script.SUR_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
         await message.delete()
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help", "start", "hehe"]:
