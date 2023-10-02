@@ -50,15 +50,11 @@ async def start(client, message):
             InlineKeyboardButton('🥇 ᴛᴇᴀᴍ ᴋʟ ᴏꜰꜰɪᴄɪᴀʟ ʟɪɴᴋs 🥇', callback_data="group_info")
         ]]         
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await message.reply_sticker("CAACAgIAAxkBAAE5teNk03mdcUwZgk5r0t7O_axeVvG_-wACJAwAAviQOEiWAywHzwABlxgeBA") 
-        await asyncio.sleep(2)
-        await m.delete()
-        await message.reply_photo(
-            photo=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
+        kd = await message.reply_photo(
+        photo=random.choice(PICS),
+        caption=script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
+        await asyncio.sleep(6)
+        await kd.delete()
         await message.delete()
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help", "start", "hehe"]:
