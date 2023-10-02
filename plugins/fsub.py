@@ -120,7 +120,7 @@ async def ForceSub(bot: Client, update: Message, file_id: str = False, mode="che
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=enums.ParseMode.MARKDOWN,
             )
-            await asyncio.sleep(60)
+            await asyncio.sleep(50)
             await msg.delete()
             await update.delete()
         return False
