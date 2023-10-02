@@ -98,6 +98,17 @@ Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ Yᴏᴜʀ Gʀᴏᴜᴘ I Wɪʟʟ Gɪᴠᴇ Mᴏᴠ
 
 <b>© Powered by @Team_KL</b>
 """
+    OWNER_INFO = """
+<b>⍟───[ Oᴡɴᴇʀ Dᴇᴛᴀɪʟꜱ ]───⍟
+    
+• Fᴜʟʟ Nᴀᴍᴇ : • HᴀᴄKᴇʀ Jʀ ~ 🕊 •
+• Uꜱᴇʀɴᴀᴍᴇ : @Hacker_Jr
+• Lᴏɢᴏ Mᴀᴋᴇʀ Cʜᴀɴɴᴇʟ : <a href='t.me/PremiumlogoPro'>Pʀᴇᴍɪᴜᴍ Lᴏɢᴏ Pʀᴏ 🃏</a></b>"""
+
+    GROUP_INFO = """
+<b>⍟ Wᴇʟᴄᴏᴍᴇ Tᴏ Tᴇᴀᴍ Kʟ Lɪɴᴋs ⍟</b>
+
+Jᴏɪɴ Oᴜʀ Mᴏᴠɪᴇꜱ Cʜᴀɴɴᴇʟꜱ & Gʀᴏᴜᴘ</b>"""
 
     EXTRAMOD_TXT = """Help: <b>Extra Modules</b>
 
@@ -138,16 +149,3 @@ Added By - {}"""
     LOG_TEXT_P = """#NewUser
 ID - <code>{}</code>
 Name - {}"""
-
-    OWNER_INFO = """
-<b>⍟───[ Oᴡɴᴇʀ Dᴇᴛᴀɪʟꜱ ]───⍟
-    
-• Fᴜʟʟ Nᴀᴍᴇ : • HᴀᴄKᴇʀ Jʀ ~ 🕊 •
-• Uꜱᴇʀɴᴀᴍᴇ : @Hacker_Jr
-• Lᴏɢᴏ Mᴀᴋᴇʀ Cʜᴀɴɴᴇʟ : <a href='t.me/PremiumlogoPro'>Pʀᴇᴍɪᴜᴍ Lᴏɢᴏ Pʀᴏ 🃏</a></b>"""
-
-    GROUP_INFO = """
-<b>⍟ Wᴇʟᴄᴏᴍᴇ Tᴏ Tᴇᴀᴍ Kʟ Lɪɴᴋs ⍟</b>
-
-Jᴏɪɴ Oᴜʀ Mᴏᴠɪᴇꜱ Cʜᴀɴɴᴇʟꜱ & Gʀᴏᴜᴘ</b>"""
-
