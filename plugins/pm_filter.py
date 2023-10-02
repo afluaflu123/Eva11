@@ -36,6 +36,23 @@ async def give_filter(client, message):
     if k == False:
         await auto_filter(client, message)
 
+@Client.on_message(filters.private & filters.text & filters.incoming)
+async def pm_text(bot, message):
+    content = message.text
+    user = message.from_user.first_name
+    user_id = message.from_user.id
+    if content.startswith("/") or content.startswith("#"): return  # ignore♀️ommands and hashtags
+    if user_id in ADMINS: return # ignore admins
+    k = await message.reply_text(
+         text="<b><i>ʜᴇʏ ᴅᴜᴅᴇ, ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ᴏɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ​</i>👇</b>",   
+         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ​ ", url=f"https://t.me/KLMovieGroup")]]))
+    await asyncio.sleep(8)
+    await k.delete()
+    await message.delete()
+    await bot.send_message(
+        chat_id=LOG_CHANNEL,
+        text=f"<b>👻 𝐏𝐌_𝐌𝐒𝐆 👻\n\n📝 Mᴇssᴀɢᴇ ​:- {content}\n\n👶🏻 RᴇQᴜᴇꜱᴛᴇᴅ Bʏ :- {user}\n\n🃏 Uꜱᴇʀ Iᴅ :- {user_id}</b>"
+    )
 
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
@@ -64,7 +81,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"⚡ {get_size(file.file_size)} ▪️ {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"⎆ {get_size(file.file_size)} ⊳ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -82,7 +99,12 @@ async def next_page(bot, query):
             ]
             for file in files
         ]
-
+    btn.insert(0, 
+        [
+            InlineKeyboardButton(f'⎙ Fɪʟᴇs: {total}', 'dupe'),
+            InlineKeyboardButton(f'⟮ Iɴꜰᴏ ⟯', 'reqinfo')
+        ]
+    )
     if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
@@ -91,20 +113,20 @@ async def next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(f"📃 Pages {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
+            [InlineKeyboardButton("⇚ ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
+             InlineKeyboardButton(f"➶ ᴘᴀɢᴇ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
-            [InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
+            [InlineKeyboardButton(f"➶ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
+             InlineKeyboardButton("ɴᴇxᴛ​ ➾", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
-                InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"🗓 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton("⇚ ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton(f"➶ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
+                InlineKeyboardButton("ɴᴇxᴛ​ ➾", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
     try:
@@ -417,12 +439,25 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if f_caption is None:
             f_caption = f"{title}"
         await query.answer()
-        await client.send_cached_media(
+        msg = await client.send_cached_media(
             chat_id=query.from_user.id,
             file_id=file_id,
             caption=f_caption,
-            protect_content=True if ident == 'checksubp' else False
-        )
+            protect_content=True if ident == 'checksubp' else False,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                  InlineKeyboardButton("♽ Mᴏᴠɪᴇ Rᴇᴏ̨ᴜᴇsᴛ Cʜᴀɴɴᴇʟ ♽", url="t.me/+3sc743KKHWoxZDY1")
+                 ]
+                ]
+            )
+        ) 
+        k = await msg.reply("<b><u>❗️❗️IMPORTANT❗️️❗️</u>\n\n⚠️ This File Will Be Deleted From Here Within <u>10 Minute</u>\n\nPlease Forward This File To Your Saved Messages And Start Download There ☺️.</b>",quote=True)
+        await asyncio.sleep(50)
+        await msg.delete()
+        await k.delete()        
+        return
+
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
@@ -664,7 +699,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"⚡ {get_size(file.file_size)} ▪️ {file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"⎆ {get_size(file.file_size)} ⊳ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -683,18 +718,23 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
-
+    btn.insert(0, 
+        [
+            InlineKeyboardButton(f"⇓ {search} ⇓", "neosub"),
+            InlineKeyboardButton(f"⟮ Iɴꜰᴏ ⟯", "reqinfo")       
+        ]
+    )
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"🗓 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
+            [InlineKeyboardButton(text=f"➶ 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
+             InlineKeyboardButton(text="ɴᴇxᴛ​ ⇛", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
+            [InlineKeyboardButton(text="➶ 1/1", callback_data="pages")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
@@ -745,6 +785,9 @@ async def auto_filter(client, msg, spoll=False):
             fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
         fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+    await asyncio.sleep(90)
+    await fmsg.delete()
+    await message.delete()
     if spoll:
         await msg.message.delete()
 
