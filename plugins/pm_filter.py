@@ -560,7 +560,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "owner_info":
         buttons = [[
             InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='start'),
-            InlineKeyboardButton ('𓄀 Cᴏɴᴛᴀᴄᴛ', url="t.me/PremiumLogoPro")
+            InlineKeyboardButton ('𓄀 Cʜᴀɴɴᴇʟ', url="t.me/PremiumLogoPro")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -629,7 +629,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer("⚠ Iɴꜰᴏʀᴍᴀᴛɪᴏɴ ⚠\n\n🤔 Tʜɪɴᴋ Yᴏᴜ. Aʀᴇ Yᴏᴜ Nᴏᴛ Mʏ Aᴅᴍɪɴ..?\nSᴏ Tʜɪꜱ Cᴏᴍᴍᴇɴᴛ Iꜱ Nᴏᴛ Fᴏʀ Yᴏᴜ 🤗", show_alert=True)        
     elif query.data == "stats":
         buttons = [[
-            InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='about'),
             InlineKeyboardButton('↺ Rᴇғʀᴇsʜ', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -648,7 +648,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "rfrsh":
         await query.answer("Fetching MongoDb DataBase")
         buttons = [[
-            InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='help'),
+            InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='about'),
             InlineKeyboardButton('↺ Rᴇғʀᴇsʜ', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
