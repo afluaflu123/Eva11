@@ -33,7 +33,7 @@ async def answer(bot, query):
     if AUTH_CHANNEL and not await is_subscribed(bot, query):
         await query.answer(results=[],
                            cache_time=0,
-                           switch_pm_text='You have to subscribe my channel to use the bot',
+                           switch_pm_text='𝗬𝗢𝗨 𝗛𝗔𝗩𝗘 𝗧𝗢 𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 𝗠𝗬 𝗖𝗛𝗔𝗡𝗡𝗘𝗟 𝗧𝗢 𝗨𝗦𝗘 𝗧𝗛𝗘 𝗕𝗢𝗧',
                            switch_pm_parameter="subscribe")
         return
 
@@ -54,7 +54,7 @@ async def answer(bot, query):
                                                   offset=offset)
 
     for file in files:        
-        title='@Team_KL ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
+        title='@Team_KL ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), file.file_name.split()))
         size=get_size(file.file_size)
         f_caption=file.caption
         if CUSTOM_FILE_CAPTION:
