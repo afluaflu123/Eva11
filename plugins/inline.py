@@ -53,8 +53,8 @@ async def answer(bot, query):
                                                   max_results=10,
                                                   offset=offset)
 
-    for file in files:
-        title=file.file_name
+    for file in files:        
+        title='@Team_KL ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split()))
         size=get_size(file.file_size)
         f_caption=file.caption
         if CUSTOM_FILE_CAPTION:
@@ -67,7 +67,7 @@ async def answer(bot, query):
             f_caption = f"{file.file_name}"
         results.append(
             InlineQueryResultCachedDocument(
-                title='@Team_KL ' + ' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@'), files.file_name.split())),       
+                title=file.file_name,
                 document_file_id=file.file_id,
                 caption=f_caption,
                 description=f'Size: {get_size(file.file_size)}\nType: {file.file_type}',
@@ -104,6 +104,8 @@ def get_reply_markup(query):
     buttons = [
         [
             InlineKeyboardButton('🧨 𝗦𝗘𝗔𝗥𝗖𝗛 𝗔𝗚𝗔𝗜𝗡™ 🧨', switch_inline_query_current_chat=query)
+        ],[
+            InlineKeyboardButton("☘️ 𝗠𝗢𝗩𝗜𝗘 𝗥𝗘𝗤𝗨𝗘𝗦𝗧 𝗚𝗥𝗢𝗨𝗣 ☘️", url="https://t.me/+3sc743KKHWoxZDY1")
         ]
         ]
     return InlineKeyboardMarkup(buttons)
