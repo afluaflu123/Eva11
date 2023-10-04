@@ -20,19 +20,18 @@ Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ 
 
 ◆ Aʟʟ Cʀᴇᴅɪᴛs​: <a href='https://t.me/TeamEvamaria'>Team Eva Maria</a></b>"""
 
-    MANUELFILTER_TXT = """<b><u>FILTERS</u></b>
+    MANUELFILTER_TXT = """<b><u>FILTERS COMMANDS</u></b>
 
-<b>COMMANDS AND USAGE:</b>
 • /filter - <code>add a filter in chat</code>
 • /filters - <code>list all the filters of a chat</code>
 • /del - <code>delete a specific filter in chat</code>
 • /delall - <code>delete the whole filters in a chat (chat owner only)</code>"""
 
-    BUTTON_TXT = """<b><u>BUTTONS NOTE:-</u>
+    BUTTON_TXT = """<b><u>BUTTONS NOTE:-</u></b>
 
 1. TELEGRAM WILL NOT ALLOWS YOU TO SEND BUTTONS WITHOUT ANY CONTENT, SO CONTENT IS MANDATORY.
-2. NANCY SUPPORTS BUTTONS WITH ANY TELEGRAM MEDIA TYPE.
-3. BUTTONS SHOULD BE PROPERLY PARSED AS MARKDOWN FORMAT.</b>
+2. NANCY BOT SUPPORTS BUTTONS WITH ANY TELEGRAM MEDIA TYPE.
+3. BUTTONS SHOULD BE PROPERLY PARSED AS MARKDOWN FORMAT.
 
 <b><u>URL BUTTONS:-</u></b>
 <code>[Button Text](buttonurl:https://t.me/Oru_adaar_Robot)</code>
@@ -40,16 +39,16 @@ Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ 
 <b><u>ALERT BUTTONS:-</u></b>
 <code>[Button Text](buttonalert:This is an alert message)</code>"""
 
-    AUTOFILTER_TXT = """<b><u>AUTO FILTER NOTE:-</u>
+    AUTOFILTER_TXT = """<b><u>AUTO FILTER NOTE:-</u></b>
 
 1. MAKE ME THE ADMIN OF YOUR CHANNEL IF IT'S PRIVATE.
 2. MAKE SURE THAT YOUR CHANNEL DOES NOT CONTAINS CAMRIPS, PORN AND FAKE FILES.
-3. FORWARD THE LAST MESSAGE TO ME WITH QUOTES. I'LL ADD ALL THE FILES IN THAT CHANNEL TO MY DB.</b>"""
+3. FORWARD THE LAST MESSAGE TO ME WITH QUOTES. I'LL ADD ALL THE FILES IN THAT CHANNEL TO MY DB."""
 
-    CONNECTION_TXT = """<b><u>CONNECTIONS NOTE:-</u>
+    CONNECTION_TXT = """<b><u>CONNECTIONS NOTE:-</u></b>
 
 1. ONLY ADMINS CAN ADD A CONNECTION.
-2. SEND <code>/connect</code> FOR CONNECTING ME TO UR PM</b>
+2. SEND <code>/connect</code> FOR CONNECTING ME TO UR PM
 
 <b><u>COMMANDS AND USAGE:-</u></b>
 • /connect  - <code>connect a particular chat to your PM</code>
