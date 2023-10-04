@@ -32,35 +32,35 @@ Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ Yᴏᴜʀ Gʀᴏᴜᴘ I Wɪʟʟ Gɪᴠᴇ Mᴏᴠ
 
     BUTTON_TXT = """<b><u>BUTTONS</u></b>
 
-<b>NOTE:</b>
-1. Telegram will not allows you to send buttons without any content, so content is mandatory.
-2. Nancy supports buttons with any telegram media type.
-3. Buttons should be properly parsed as markdown format
+<b><u>NOTE:-</u></b>
+1. TELEGRAM WILL NOT ALLOWS YOU TO SEND BUTTONS WITHOUT ANY CONTENT, SO CONTENT IS MANDATORY.
+2. NANCY SUPPORTS BUTTONS WITH ANY TELEGRAM MEDIA TYPE.
+3. BUTTONS SHOULD BE PROPERLY PARSED AS MARKDOWN FORMAT 
 
-<b>URL BUTTONS:</b>
+<b><u>URL BUTTONS:-</u></b>
 <code>[Button Text](buttonurl:https://t.me/Oru_adaar_Robot)</code>
 
-<b>ALERT BUTTONS:</b>
+<b><u>ALERT BUTTONS:-</u></b>
 <code>[Button Text](buttonalert:This is an alert message)</code>"""
 
     AUTOFILTER_TXT = """<b><u>AUTO FILTER</u></b>
 
-<b>NOTE:</b>
-1. Make me the admin of your channel if it's private.
-2. make sure that your channel does not contains camrips, porn and fake files.
-3. Forward the last message to me with quotes.
- I'll add all the files in that channel to my db."""
+<b><u>NOTE:-</u></b>
+1. MAKE ME THE ADMIN OF YOUR CHANNEL IF IT'S PRIVATE.
+2. MAKE SURE THAT YOUR CHANNEL DOES NOT CONTAINS CAMRIPS, porn and fake files.
+3. FORWARD THE LAST MESSAGE TO ME WITH QUOTES.
+ I'LL ADD ALL THE FILES IN THAT CHANNEL TO MY DB."""
 
     CONNECTION_TXT = """<b><u>CONNECTIONS</u></b>
 
-- Used to connect bot to PM for managing filters 
-- it helps to avoid spamming in groups.
+- USED TO CONNECT BOT TO PM FOR MANAGING FILTERS 
+- IT HELPS TO AVOID SPAMMING IN GROUPS.
 
-<b>NOTE:</b>
-1. Only admins can add a connection.
-2. Send <code>/connect</code> for connecting me to ur PM
+<b><u>NOTE:-</u></b>
+1. ONLY ADMINS CAN ADD A CONNECTION.
+2. SEND <code>/connect</code> FOR CONNECTING ME TO UR PM
 
-<b>COMMANDS AND USAGE:</b>
+<b><u>COMMANDS AND USAGE:-</u></b>
 • /connect  - <code>connect a particular chat to your PM</code>
 • /disconnect  - <code>disconnect from a chat</code>
 • /connections - <code>list all your connections</code>"""
@@ -103,16 +103,13 @@ Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ Yᴏᴜʀ Gʀᴏᴜᴘ I Wɪʟʟ Gɪᴠᴇ Mᴏᴠ
     GROUP_INFO = """
 <b>⍟ Wᴇʟᴄᴏᴍᴇ Tᴏ Tᴇᴀᴍ Kʟ Lɪɴᴋs ⍟</b>"""
 
-    WHYJOIN = """
-⚠ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ ⚠
-
-Iғ Tʜᴇ Gʀᴏᴜᴘ Cᴏᴘʏ Rɪɢʜᴛ Iꜱ Lᴏꜱᴛ, Wʜᴇɴ A Nᴇᴡ Gʀᴏᴜᴘ Iꜱ Sᴛᴀʀᴛᴇᴅ, Iᴛ Wɪʟʟ Bᴇ Nᴏᴛɪғɪᴇᴅ Oɴ Tʜɪꜱ Cʜᴀɴɴᴇʟ 🤥
+    WHYJOIN = """Iғ Tʜᴇ Gʀᴏᴜᴘ Cᴏᴘʏ Rɪɢʜᴛ Iꜱ Lᴏꜱᴛ, Wʜᴇɴ A Nᴇᴡ Gʀᴏᴜᴘ Iꜱ Sᴛᴀʀᴛᴇᴅ, Iᴛ Wɪʟʟ Bᴇ Nᴏᴛɪғɪᴇᴅ Oɴ Tʜɪꜱ Cʜᴀɴɴᴇʟ 🤥
 
 © @Team_KL"""
 
     EXTRAMOD_TXT = """<b><u>EXTRA MODULES</u></b>
 
-<b>COMMANDS AND USAGE:</b>
+<b><u>COMMANDS AND USAGE:-</u></b>
 • /id - <code>get id of a specified user.</code>
 • /info  - <code>get information about a user.</code>
 • /imdb  - <code>get the film information from IMDb source.</code>
@@ -120,7 +117,7 @@ Iғ Tʜᴇ Gʀᴏᴜᴘ Cᴏᴘʏ Rɪɢʜᴛ Iꜱ Lᴏꜱᴛ, Wʜᴇɴ A Nᴇᴡ
 
     ADMIN_TXT = """<b><u>ADMIN MODS</u></b>
 
-<b>COMMANDS AND USAGE:</b>
+<b><u>COMMANDS AND USAGE:-</u></b>
 • /logs - <code>to get the rescent errors</code>
 • /stats - <code>to get status of files in db.</code>
 • /delete - <code>to delete a specific file from db.</code>
