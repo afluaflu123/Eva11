@@ -29,9 +29,9 @@ Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ 
 
     BUTTON_TXT = """<b><u>BUTTONS NOTE:-</u></b>
 
-1. TELEGRAM WILL NOT ALLOWS YOU TO SEND BUTTONS WITHOUT ANY CONTENT, SO CONTENT IS MANDATORY.
-2. NANCY BOT SUPPORTS BUTTONS WITH ANY TELEGRAM MEDIA TYPE.
-3. BUTTONS SHOULD BE PROPERLY PARSED AS MARKDOWN FORMAT.
+• ᴛᴇʟᴇɢʀᴀᴍ ᴡɪʟʟ ɴᴏᴛ ᴀʟʟᴏᴡs ʏᴏᴜ ᴛᴏ sᴇɴᴅ ʙᴜᴛᴛᴏɴs ᴡɪᴛʜᴏᴜᴛ ᴀɴʏ ᴄᴏɴᴛᴇɴᴛ, sᴏ ᴄᴏɴᴛᴇɴᴛ ɪs ᴍᴀɴᴅᴀᴛᴏʀʏ.
+• ɴᴀɴᴄʏ ʙᴏᴛ sᴜᴘᴘᴏʀᴛs ʙᴜᴛᴛᴏɴs ᴡɪᴛʜ ᴀɴʏ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇᴅɪᴀ ᴛʏᴘᴇ.
+• ʙᴜᴛᴛᴏɴs sʜᴏᴜʟᴅ ʙᴇ ᴘʀᴏᴘᴇʀʟʏ ᴘᴀʀsᴇᴅ ᴀs ᴍᴀʀᴋᴅᴏᴡɴ ꜰᴏʀᴍᴀᴛ.
 
 <b><u>URL BUTTONS:-</u></b>
 <code>[Button Text](buttonurl:https://t.me/Oru_adaar_Robot)</code>
