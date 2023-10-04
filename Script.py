@@ -1,9 +1,7 @@
 class script(object):
     START_TXT = """<b>Hᴇʟʟᴏ {},
 
-Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, I Aᴍ A Pᴏᴡᴇʀꜰᴜʟ AᴜᴛᴏFɪʟᴛᴇʀ + MᴀɴᴜᴀʟFɪʟᴛᴇʀ
-
-Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ Yᴏᴜʀ Gʀᴏᴜᴘ I Wɪʟʟ Gɪᴠᴇ Mᴏᴠɪᴇs Oʀ Sᴇʀɪᴇs Iɴ Yᴏᴜʀ Gʀᴏᴜᴘ Aɴᴅ Pᴍ.</b>"""   
+Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ Yᴏᴜʀ Gʀᴏᴜᴘ I Wɪʟʟ Gɪᴠᴇ Mᴏᴠɪᴇs Oʀ Sᴇʀɪᴇs Iɴ Yᴏᴜʀ Gʀᴏᴜᴘ Aɴᴅ Pᴍ.</b>"""   
 
     HELP_TXT = """<b>Hᴇʏ {} Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
@@ -30,12 +28,11 @@ Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ Yᴏᴜʀ Gʀᴏᴜᴘ I Wɪʟʟ Gɪᴠᴇ Mᴏᴠ
 • /del - <code>delete a specific filter in chat</code>
 • /delall - <code>delete the whole filters in a chat (chat owner only)</code>"""
 
-    BUTTON_TXT = """<b><u>BUTTONS</u></b>
+    BUTTON_TXT = """<b><u>BUTTONS NOTE:-</u>
 
-<b><u>NOTE:-</u></b>
 1. TELEGRAM WILL NOT ALLOWS YOU TO SEND BUTTONS WITHOUT ANY CONTENT, SO CONTENT IS MANDATORY.
 2. NANCY SUPPORTS BUTTONS WITH ANY TELEGRAM MEDIA TYPE.
-3. BUTTONS SHOULD BE PROPERLY PARSED AS MARKDOWN FORMAT 
+3. BUTTONS SHOULD BE PROPERLY PARSED AS MARKDOWN FORMAT.</b>
 
 <b><u>URL BUTTONS:-</u></b>
 <code>[Button Text](buttonurl:https://t.me/Oru_adaar_Robot)</code>
@@ -43,22 +40,16 @@ Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ Yᴏᴜʀ Gʀᴏᴜᴘ I Wɪʟʟ Gɪᴠᴇ Mᴏᴠ
 <b><u>ALERT BUTTONS:-</u></b>
 <code>[Button Text](buttonalert:This is an alert message)</code>"""
 
-    AUTOFILTER_TXT = """<b><u>AUTO FILTER</u></b>
+    AUTOFILTER_TXT = """<b><u>AUTO FILTER NOTE:-</u>
 
-<b><u>NOTE:-</u></b>
 1. MAKE ME THE ADMIN OF YOUR CHANNEL IF IT'S PRIVATE.
-2. MAKE SURE THAT YOUR CHANNEL DOES NOT CONTAINS CAMRIPS, porn and fake files.
-3. FORWARD THE LAST MESSAGE TO ME WITH QUOTES.
- I'LL ADD ALL THE FILES IN THAT CHANNEL TO MY DB."""
+2. MAKE SURE THAT YOUR CHANNEL DOES NOT CONTAINS CAMRIPS, PORN AND FAKE FILES.
+3. FORWARD THE LAST MESSAGE TO ME WITH QUOTES. I'LL ADD ALL THE FILES IN THAT CHANNEL TO MY DB.</b>"""
 
-    CONNECTION_TXT = """<b><u>CONNECTIONS</u></b>
+    CONNECTION_TXT = """<b><u>CONNECTIONS NOTE:-</u>
 
-- USED TO CONNECT BOT TO PM FOR MANAGING FILTERS 
-- IT HELPS TO AVOID SPAMMING IN GROUPS.
-
-<b><u>NOTE:-</u></b>
 1. ONLY ADMINS CAN ADD A CONNECTION.
-2. SEND <code>/connect</code> FOR CONNECTING ME TO UR PM
+2. SEND <code>/connect</code> FOR CONNECTING ME TO UR PM</b>
 
 <b><u>COMMANDS AND USAGE:-</u></b>
 • /connect  - <code>connect a particular chat to your PM</code>
@@ -107,17 +98,15 @@ Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ Yᴏᴜʀ Gʀᴏᴜᴘ I Wɪʟʟ Gɪᴠᴇ Mᴏᴠ
 
 © @Team_KL"""
 
-    EXTRAMOD_TXT = """<b><u>EXTRA MODULES</u></b>
+    EXTRAMOD_TXT = """<b><u>EXTRA MODULES COMMANDS</u></b>
 
-<b><u>COMMANDS AND USAGE:-</u></b>
 • /id - <code>get id of a specified user.</code>
 • /info  - <code>get information about a user.</code>
 • /imdb  - <code>get the film information from IMDb source.</code>
 • /search  - <code>get the film information from various sources.</code>"""
 
-    ADMIN_TXT = """<b><u>ADMIN MODS</u></b>
+    ADMIN_TXT = """<b><u>ADMIN MODS COMMANDS</u></b>
 
-<b><u>COMMANDS AND USAGE:-</u></b>
 • /logs - <code>to get the rescent errors</code>
 • /stats - <code>to get status of files in db.</code>
 • /delete - <code>to delete a specific file from db.</code>
