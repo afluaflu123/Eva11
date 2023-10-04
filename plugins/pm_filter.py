@@ -459,6 +459,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await k.delete()        
         return
 
+    elif query.data == "whyjoin":
+        await query.answer(text=script.WHYJOIN, show_alert=True)
     elif query.data == "neosub": 
         await query.answer(f"✯ താഴെയുള്ള ബട്ടണിൽ വേണ്ട ക്വാളിറ്റി യിൽ ക്ലിക്ക് ചെയ്താൽ കിട്ടും⚡\n\n✯ 𝖢𝗅𝗂𝖼𝗄 𝗈𝗇 𝗍𝗁𝖾 𝗙𝗶𝗹𝗲 𝗡𝗮𝗺𝗲 𝖻𝖾𝗅𝗈𝗐 𝖻𝗎𝗍𝗍𝗈𝗇 𝖠𝗇𝖽 𝖲𝗍𝖺𝗋𝗍 𝖳𝗁𝖾 𝖡𝗈𝗍 🎯 \n\n➠ © @Team_KL",show_alert=True)
     elif query.data == "reqinfo":
