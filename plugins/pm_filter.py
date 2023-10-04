@@ -419,7 +419,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
     elif query.data.startswith("checksub"):
         if (AUTH_CHANNEL or REQ_CHANNEL) and not await is_subscribed(client, query):
-            await query.answer("I Like Your Smartness, But Don't Be Oversmart 😒", show_alert=True)
+            await query.answer("I Lɪᴋᴇ Yᴏᴜʀ Sᴍᴀʀᴛɴᴇss, Bᴜᴛ Dᴏɴ'ᴛ Bᴇ Oᴠᴇʀsᴍᴀʀᴛ 😒", show_alert=True)
             return
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
@@ -448,7 +448,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                  InlineKeyboardButton("♽ Mᴏᴠɪᴇ Rᴇᴏ̨ᴜᴇsᴛ Cʜᴀɴɴᴇʟ ♽", url="t.me/+3sc743KKHWoxZDY1")
+                  InlineKeyboardButton("♽ Mᴏᴠɪᴇ Rᴇᴏ̨ᴜᴇsᴛ Gʀᴏᴜᴘ ♽", url="t.me/+3sc743KKHWoxZDY1")
                  ]
                 ]
             )
@@ -644,7 +644,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if query.from_user.id in ADMINS:
             await query.message.edit_text(text=script.ADMIN_TXT, reply_markup=reply_markup, parse_mode=enums.ParseMode.HTML)
         else:
-            await query.answer("⚠ Iɴꜰᴏʀᴍᴀᴛɪᴏɴ ⚠\n\n🤔 Tʜɪɴᴋ Yᴏᴜ. Aʀᴇ Yᴏᴜ Nᴏᴛ Mʏ Aᴅᴍɪɴ..?\nSᴏ Tʜɪꜱ Cᴏᴍᴍᴇɴᴛ Iꜱ Nᴏᴛ Fᴏʀ Yᴏᴜ 🤗", show_alert=True)        
+            await query.answer("🤔 Tʜɪɴᴋ Yᴏᴜ. Aʀᴇ Yᴏᴜ Nᴏᴛ Mʏ Aᴅᴍɪɴ..? Sᴏ Tʜɪꜱ Cᴏᴍᴍᴇɴᴛ Iꜱ Nᴏᴛ Fᴏʀ Yᴏᴜ 🤗", show_alert=True)        
     elif query.data == "stats":
         buttons = [[
             InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='about'),
