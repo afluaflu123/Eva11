@@ -55,13 +55,13 @@ async def start(client, message):
         T = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
         Time = T.hour        
         if Time < 12:
-            afsu="🌞 Gᴏᴏᴅ Mᴏʀɴɪɴɢ" 
+            afsu="Gᴏᴏᴅ Mᴏʀɴɪɴɢ" 
         elif Time < 15:
-            afsu="⛅️ Gᴏᴏᴅ AғᴛᴇʀNᴏᴏɴ" 
+            afsu="Gᴏᴏᴅ AғᴛᴇʀNᴏᴏɴ" 
         elif Time < 20:
-            afsu="☕ Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
+            afsu="Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
         else:
-            afsu="🌙 Gᴏᴏᴅ Nɪɢʜᴛ"    
+            afsu="Gᴏᴏᴅ Nɪɢʜᴛ"    
         m=await message.reply_sticker("CAACAgIAAxkBAAE5teNk03mdcUwZgk5r0t7O_axeVvG_-wACJAwAAviQOEiWAywHzwABlxgeBA") 
         await asyncio.sleep(2)
         await m.delete()
@@ -90,13 +90,13 @@ async def start(client, message):
         T = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
         Time = T.hour        
         if Time < 12:
-            afsu="🌞 Gᴏᴏᴅ Mᴏʀɴɪɴɢ" 
+            afsu="Gᴏᴏᴅ Mᴏʀɴɪɴɢ" 
         elif Time < 15:
-            afsu="⛅️ Gᴏᴏᴅ AғᴛᴇʀNᴏᴏɴ" 
+            afsu="Gᴏᴏᴅ AғᴛᴇʀNᴏᴏɴ" 
         elif Time < 20:
-            afsu="☕ Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
+            afsu="Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
         else:
-            afsu="🌙 Gᴏᴏᴅ Nɪɢʜᴛ"
+            afsu="Gᴏᴏᴅ Nɪɢʜᴛ"
         await message.reply_photo(
             photo=random.choice(PICS),
             caption=script.START_TXT.format(afsu, message.from_user.mention, temp.U_NAME, temp.B_NAME),
@@ -429,6 +429,12 @@ async def settings(client, message):
         return
 
     settings = await get_settings(grp_id)
+    try:
+        if settings['auto_delete']:
+            settings = await get_settings(grp_id)
+    except KeyError:
+        await save_group_settings(grp_id, 'auto_delete', True)
+        settings = await get_settings(grp_id)
 
     if settings is not None:
         buttons = [
@@ -491,6 +497,19 @@ async def settings(client, message):
                     '✅ Yes' if settings["welcome"] else '❌ No',
                     callback_data=f'setgs#welcome#{settings["welcome"]}#{grp_id}',
                 ),
+            ],
+            [
+                InlineKeyboardButton(
+                    'Auto Delete',
+                    callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}',
+                ),
+                InlineKeyboardButton(
+                    '10 Mins' if settings["auto_delete"] else 'OFF',
+                    callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}',
+                ),
+            ],
+            [
+                InlineKeyboardButton('Cʟᴏsᴇ Sᴇᴛᴛɪɴɢs', callback_data='close_data')
             ],
         ]
 
