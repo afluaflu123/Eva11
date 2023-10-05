@@ -486,9 +486,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         if Time < 12:
             afsu="🌞 Gᴏᴏᴅ Mᴏʀɴɪɴɢ" 
         elif Time < 15:
-            afsu="🕒 Gᴏᴏᴅ AғᴛᴇʀNᴏᴏɴ" 
+            afsu="🌤 Gᴏᴏᴅ AғᴛᴇʀNᴏᴏɴ" 
         elif Time < 20:
-            afsu="☕ Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
+            afsu="☕️ Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
         else:
             afsu="🌙 Gᴏᴏᴅ Nɪɢʜᴛ"
         await client.edit_message_media(
@@ -677,7 +677,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "rfrsh":
-        await query.answer("Fetching MongoDb DataBase")
+        await query.answer("🌱 𝗙𝗘𝗧𝗖𝗛𝗜𝗡𝗚 𝗠𝗢𝗡𝗚𝗢𝗗𝗕 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘")
         buttons = [[
             InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='about'),
             InlineKeyboardButton('↺ Rᴇғʀᴇsʜ', callback_data='rfrsh')
@@ -766,7 +766,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    await query.answer('Piracy Is Crime')
+    await query.answer('⏤͟͟͞ ♡ Nᴀɴᴄʏ ᵛ³·⁰ 🦄')
 
 
 async def auto_filter(client, msg, spoll=False):
