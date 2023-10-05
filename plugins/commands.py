@@ -57,7 +57,7 @@ async def start(client, message):
         if Time < 12:
             afsu="🌞 Gᴏᴏᴅ Mᴏʀɴɪɴɢ" 
         elif Time < 15:
-            afsu="🕒 Gᴏᴏᴅ AғᴛᴇʀNᴏᴏɴ" 
+            afsu="⛅️ Gᴏᴏᴅ AғᴛᴇʀNᴏᴏɴ" 
         elif Time < 20:
             afsu="☕ Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
         else:
@@ -92,7 +92,7 @@ async def start(client, message):
         if Time < 12:
             afsu="🌞 Gᴏᴏᴅ Mᴏʀɴɪɴɢ" 
         elif Time < 15:
-            afsu="🕒 Gᴏᴏᴅ AғᴛᴇʀNᴏᴏɴ" 
+            afsu="⛅️ Gᴏᴏᴅ AғᴛᴇʀNᴏᴏɴ" 
         elif Time < 20:
             afsu="☕ Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
         else:
