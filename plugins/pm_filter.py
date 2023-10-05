@@ -4,6 +4,8 @@ import re
 import ast
 import math
 import random
+import pytz
+import datetime
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 import pyrogram
@@ -186,14 +188,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     "I'm not connected to any groups!\nCheck /connections or connect to any groups",
                     quote=True
                 )
-                return await query.answer('Piracy Is Crime')
+                return await query.answer('⏤͟͟͞ ♡ Nᴀɴᴄʏ ᵛ³·⁰ 🦄')
 
         elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
             grp_id = query.message.chat.id
             title = query.message.chat.title
 
         else:
-            return await query.answer('Piracy Is Crime')
+            return await query.answer('⏤͟͟͞ ♡ Nᴀɴᴄʏ ᵛ³·⁰ 🦄')
 
         st = await client.get_chat_member(grp_id, userid)
         if (st.status == enums.ChatMemberStatus.OWNER) or (str(userid) in ADMINS):
@@ -247,7 +249,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=keyboard,
             parse_mode=enums.ParseMode.MARKDOWN
         )
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('⏤͟͟͞ ♡ Nᴀɴᴄʏ ᵛ³·⁰ 🦄')
     elif "connectcb" in query.data:
         await query.answer()
 
@@ -268,7 +270,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
         else:
             await query.message.edit_text('Some error occurred!!', parse_mode=enums.ParseMode.MARKDOWN)
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('⏤͟͟͞ ♡ Nᴀɴᴄʏ ᵛ³·⁰ 🦄')
     elif "disconnect" in query.data:
         await query.answer()
 
@@ -291,7 +293,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Some error occurred!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('⏤͟͟͞ ♡ Nᴀɴᴄʏ ᵛ³·⁰ 🦄')
     elif "deletecb" in query.data:
         await query.answer()
 
@@ -309,7 +311,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Some error occurred!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('⏤͟͟͞ ♡ Nᴀɴᴄʏ ᵛ³·⁰ 🦄')
     elif query.data == "backcb":
         await query.answer()
 
@@ -320,7 +322,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_text(
                 "There are no active connections!! Connect to some groups first.",
             )
-            return await query.answer('Piracy Is Crime')
+            return await query.answer('⏤͟͟͞ ♡ Nᴀɴᴄʏ ᵛ³·⁰ 🦄')
         buttons = []
         for groupid in groupids:
             try:
@@ -467,6 +469,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("✯ Movies - Jailer 2023\n✯ Series - Dark S01E01\n\n✯ Correct Spelling in English Letters Only And ❌ Don't Use Stylish Font\n\n✯ Not Available Theater Print Files !\n\n ➠ © @Team_KL", show_alert=True)        
     elif query.data == "pages":
         await query.answer()
+        
     elif query.data == "start":
         buttons = [[
             InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
@@ -478,13 +481,23 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('🎭 Tᴇᴀᴍ Kʟ Oꜰꜰɪᴄɪᴀʟ Lɪɴᴋs 🎭', callback_data="group_info")
         ]]   
         reply_markup = InlineKeyboardMarkup(buttons)
+        T = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
+        Time = T.hour        
+        if Time < 12:
+            afsu="🌞 Gᴏᴏᴅ Mᴏʀɴɪɴɢ" 
+        elif Time < 15:
+            afsu="🕒 Gᴏᴏᴅ AғᴛᴇʀNᴏᴏɴ" 
+        elif Time < 20:
+            afsu="☕ Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
+        else:
+            afsu="🌙 Gᴏᴏᴅ Nɪɢʜᴛ"
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
             InputMediaPhoto(random.choice(PICS))
         )
         await query.message.edit_text(
-            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            text=script.START_TXT.format(afsu, query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -706,7 +719,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
         if str(grp_id) != str(grpid):
             await query.message.edit("Your Active Connection Has Been Changed. Go To /settings.")
-            return await query.answer('Piracy Is Crime')
+            return await query.answer('⏤͟͟͞ ♡ Nᴀɴᴄʏ ᵛ³·⁰ 🦄')
 
         if status == "True":
             await save_group_settings(grpid, set_type, False)
