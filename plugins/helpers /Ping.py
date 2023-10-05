@@ -1,3 +1,4 @@
+import asyncio
 import time
 import random
 from pyrogram import Client, filters
@@ -11,7 +12,7 @@ async def ping(_, message):
     rm = await message.reply_text("...")
     end_t = time.time()
     time_taken_s = (end_t - start_t) * 1000
-    await rm.edit(f"<b>ᴄᴜʀʀᴇɴᴛ ᴘɪɴɢ ɪꜱ\n{time_taken_s:.3f} 🏓</b>")
+    await rm.edit(f"<b>🏓 Lɪᴠᴇ Pɪɴɢ Iꜱ\n{time_taken_s:.3f}</b>")
     await asyncio.sleep(7)
     await rm.delete()
     await message.delete()
