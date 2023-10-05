@@ -41,9 +41,9 @@ Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ 
 
     AUTOFILTER_TXT = """<b><u>AUTO FILTER NOTE:-</u></b>
 
-1. MAKE ME THE ADMIN OF YOUR CHANNEL IF IT'S PRIVATE.
-2. MAKE SURE THAT YOUR CHANNEL DOES NOT CONTAINS CAMRIPS, PORN AND FAKE FILES.
-3. FORWARD THE LAST MESSAGE TO ME WITH QUOTES. I'LL ADD ALL THE FILES IN THAT CHANNEL TO MY DB."""
+• ᴍᴀᴋᴇ ᴍᴇ ᴛʜᴇ ᴀᴅᴍɪɴ ᴏꜰ ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ɪꜰ ɪᴛ's ᴘʀɪᴠᴀᴛᴇ.
+• ᴍᴀᴋᴇ sᴜʀᴇ ᴛʜᴀᴛ ʏᴏᴜʀ ᴄʜᴀɴɴᴇʟ ᴅᴏᴇs ɴᴏᴛ ᴄᴏɴᴛᴀɪɴs ᴄᴀᴍʀɪᴘs, ᴘᴏʀɴ ᴀɴᴅ ꜰᴀᴋᴇ ꜰɪʟᴇs.
+• ꜰᴏʀᴡᴀʀᴅ ᴛʜᴇ ʟᴀsᴛ ᴍᴇssᴀɢᴇ ᴛᴏ ᴍᴇ ᴡɪᴛʜ ǫᴜᴏᴛᴇs. ɪ'ʟʟ ᴀᴅᴅ ᴀʟʟ ᴛʜᴇ ꜰɪʟᴇs ɪɴ ᴛʜᴀᴛ ᴄʜᴀɴɴᴇʟ ᴛᴏ ᴍʏ ᴅʙ."""
 
     CONNECTION_TXT = """<b><u>CONNECTIONS NOTE:-</u></b>
 
