@@ -5,13 +5,13 @@ Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ 
 
     HELP_TXT = """<b>Hᴇʏ {} Hᴇʀᴇ Is Tʜᴇ Hᴇʟᴘ Fᴏʀ Mʏ Cᴏᴍᴍᴀɴᴅs.</b>"""
 
-    ABOUT_TXT = """<b>✯ Mʏ Nᴀᴍᴇ : <a href='https://t.me/Oru_adaar_Robot'>♡ Nᴀɴᴄʏ ᵛ³·⁰</a>
-✯ Dᴇᴠᴇʟᴏᴘᴇʀ: <a href='https://t.me/Hacker_Jr'>HᴀᴄKᴇʀ Jʀ 〆⁪⁬⁮⁮⁮</a>
-✯ Lɪʙʀᴀʀʏ: <a href='https://docs.pyrogram.org/'>Pʀᴏɢʀᴀᴍ</a>
-✯ Lᴀɴɢᴜᴀɢᴇ: <a href='https://www.python.org/'>Pʏᴛʜᴏɴ 3</a>
-✯ Dᴀᴛᴀ Bᴀsᴇ: <a href='https://cloud.mongodb.com/'>Mᴏɴɢᴏ Dʙ</a>
-✯ Bᴏᴛ Sᴇʀᴠᴇʀ: <a href='https://railway.app/'>Rᴀɪʟᴡᴀʏ</a>
-✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: v2.7.1 [ Sᴛᴀʙʟᴇ ]</b>"""
+    ABOUT_TXT = """<b>◆ Mʏ Nᴀᴍᴇ : <a href='https://t.me/Oru_adaar_Robot'>♡ Nᴀɴᴄʏ ᵛ³·⁰</a>
+◆ Dᴇᴠᴇʟᴏᴘᴇʀ: <a href='https://t.me/Hacker_Jr'>HᴀᴄKᴇʀ Jʀ 〆⁪⁬⁮⁮⁮</a>
+◆ Lɪʙʀᴀʀʏ: <a href='https://docs.pyrogram.org/'>Pʀᴏɢʀᴀᴍ</a>
+◆ Lᴀɴɢᴜᴀɢᴇ: <a href='https://www.python.org/'>Pʏᴛʜᴏɴ 3</a>
+◆ Dᴀᴛᴀ Bᴀsᴇ: <a href='https://cloud.mongodb.com/'>Mᴏɴɢᴏ Dʙ</a>
+◆ Bᴏᴛ Sᴇʀᴠᴇʀ: <a href='https://railway.app/'>Rᴀɪʟᴡᴀʏ</a>
+◆ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: v2.7.1 [ Sᴛᴀʙʟᴇ ]</b>"""
 
     SOURCE_TXT = """<b>
 ⚠️ Tʜɪꜱ Bᴏᴛ Iꜱ Aɴ Oᴘᴇɴ Sᴏᴜʀᴄᴇ Pʀᴏᴊᴇᴄᴛ ⚠️
@@ -86,7 +86,7 @@ Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ 
     OWNER_INFO = """
 <b>⍟───[ Oᴡɴᴇʀ Dᴇᴛᴀɪʟꜱ ]───⍟
     
-• Fᴜʟʟ Nᴀᴍᴇ : • HᴀᴄKᴇʀ Jʀ ~ 🕊 •
+• Fᴜʟʟ Nᴀᴍᴇ : • HᴀᴄKᴇʀ Jʀ ~ 🕊 
 • Uꜱᴇʀɴᴀᴍᴇ : @Hacker_Jr
 • Lᴏɢᴏ Mᴀᴋᴇʀ Cʜᴀɴɴᴇʟ : <a href='t.me/PremiumlogoPro'>Pʀᴇᴍɪᴜᴍ Lᴏɢᴏ Pʀᴏ 🃏</a></b>"""
 
@@ -123,8 +123,8 @@ Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ 
 ⎇ Fɪʟᴇs Sᴀᴠᴇᴅ: <code>{}</code>
 ⎇ Tᴏᴛᴀʟ Usᴇʀs: <code>{}</code>
 ⎇ Tᴏᴛᴀʟ Cʜᴀᴛs: <code>{}</code>
-⎇ Usᴇᴅ Sᴛᴏʀᴀɢᴇ: <code>{}</code> MiB
-⎇ Fʀᴇᴇ Sᴛᴏʀᴀɢᴇ: <code>{}</code> MiB</b>"""
+⎇ Usᴇᴅ Sᴛᴏʀᴀɢᴇ: <code>{}</code> Mɪʙ
+⎇ Fʀᴇᴇ Sᴛᴏʀᴀɢᴇ: <code>{}</code> Mɪʙ</b>"""
 
     LOG_TEXT_G = """#NewGroup
 Group = {}(<code>{}</code>)
