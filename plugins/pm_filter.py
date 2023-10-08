@@ -529,6 +529,22 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+    elif query.data == "malspell":
+        btn = [[
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+        ],[
+            InlineKeyboardButton("🇺🇸 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇸", callback_data="engspell")
+        ]] 
+        await query.message.edit_text(script.I_CUDNT, reply_markup=InlineKeyboardMarkup(btn))
+    elif query.data == "engspell":
+        btn = [[
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
+            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+        ],[
+            InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+        ]] 
+        await query.message.edit_text(script.I_CUDNT, reply_markup=InlineKeyboardMarkup(btn))
     elif query.data == "about":
         buttons = [[
             InlineKeyboardButton('〄 Sᴛᴀᴛᴜs', callback_data='stats'),
@@ -896,7 +912,7 @@ async def auto_filter(client, msg, spoll=False):
             fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
         fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(90)
+    await asyncio.sleep(50)
     await fmsg.delete()
     await message.delete()
     if spoll:
@@ -922,7 +938,7 @@ async def advantage_spell_chok(msg):
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]]        
-        k=await msg.reply_photo(photo=SPELL_IMG, caption=script.I_CUDNT, reply_markup=InlineKeyboardMarkup(btn))    
+        k=await msg.reply_photo(photo=SPELL_IMG, caption=script.I_CUDNT.format(mv_rqst), reply_markup=InlineKeyboardMarkup(btn))    
         await asyncio.sleep(26)
         await k.delete()
         await msg.delete()
@@ -958,7 +974,7 @@ async def advantage_spell_chok(msg):
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]]           
-        k=await msg.reply_photo(photo=SPELL_IMG, caption=script.I_CUDNT, reply_markup=InlineKeyboardMarkup(btn))    
+        k=await msg.reply_photo(photo=SPELL_IMG, caption=script.I_CUDNT.format(mv_rqst), reply_markup=InlineKeyboardMarkup(btn))    
         await asyncio.sleep(26)
         await k.delete()
         await msg.delete()
@@ -970,7 +986,7 @@ async def advantage_spell_chok(msg):
     ],[
         InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
     ]]
-    k=await msg.reply_photo(photo=SPELL_IMG, caption=script.I_CUDNT, reply_markup=InlineKeyboardMarkup(btn))    
+    k=await msg.reply_photo(photo=SPELL_IMG, caption=script.I_CUDNT.format(mv_rqst), reply_markup=InlineKeyboardMarkup(btn))    
     await asyncio.sleep(26)
     await k.delete()
     await msg.delete()
