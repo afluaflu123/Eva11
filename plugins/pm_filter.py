@@ -918,7 +918,7 @@ async def auto_filter(client, msg, spoll=False):
     if spoll:
         await msg.message.delete()
 
-async def advantage_spell_chok(client, msg):
+async def advantage_spell_chok(msg):
     query = re.sub(
         r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?amil|file|that|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
         "", msg.text, flags=re.IGNORECASE)  # plis contribute some common words
@@ -927,16 +927,9 @@ async def advantage_spell_chok(client, msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={msg.text}'),
-            InlineKeyboardButton(' 🔍 IMDB 🔎', url=f'https://www.imdb.com/find/?q={msg.text}&ref_=nv_sr_sm')
-         ],[
-            InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
-        ]]        
-        k=await msg.reply_photo(photo=SPELL_IMG, caption=script.I_CUDNT, reply_markup=InlineKeyboardMarkup(btn))    
-        await asyncio.sleep(26)
+        k = await msg.reply("I couldn't find any movie in that name.")
+        await asyncio.sleep(8)
         await k.delete()
-        await msg.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE)  # look for imdb / wiki results
     gs = list(filter(regex.match, g_s))
@@ -963,28 +956,24 @@ async def advantage_spell_chok(client, msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={msg.text}'),
-            InlineKeyboardButton(' 🔍 IMDB 🔎', url=f'https://www.imdb.com/find/?q={msg.text}&ref_=nv_sr_sm')
-         ],[
-            InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
-        ]]           
-        k=await msg.reply_photo(photo=SPELL_IMG, caption=script.I_CUDNT, reply_markup=InlineKeyboardMarkup(btn))    
-        await asyncio.sleep(26)
+        k = await msg.reply("I couldn't find anything related to that. Check your spelling")
+        await asyncio.sleep(8)
         await k.delete()
-        await msg.delete()
         return
     SPELL_CHECK[msg.id] = movielist
     btn = [[
-        InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={msg.text}'),
-        InlineKeyboardButton(' 🔍 IMDB 🔎', url=f'https://www.imdb.com/find/?q={msg.text}&ref_=nv_sr_sm')
-    ],[
-        InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
-    ]]
-    k=await msg.reply_photo(photo=SPELL_IMG, caption=script.I_CUDNT, reply_markup=InlineKeyboardMarkup(btn))    
-    await asyncio.sleep(26)
-    await k.delete()
-    await msg.delete()
+        InlineKeyboardButton(
+            text=movie.strip(),
+            callback_data=f"spolling#{user}#{k}",
+        )
+    ] for k, movie in enumerate(movielist)]
+    btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
+    zz = await msg.reply('<b><i>Searching for you result in imdb Wait...🧐<i/></b>')
+    await asyncio.sleep(1)
+    zz1 = await zz.edit("<b><i>I couldn't find anything related to that Did you mean any one of these?\n\nനിങ്ങൾ ഉദ്ദേശിച്ച മൂവി താഴെ കാണുന്ന വല്ലോം ആണ് എങ്കിൽ.അതിൽ ക്ലിക്ക് ചെയ്യുക</i></b>",
+                    reply_markup=InlineKeyboardMarkup(btn))
+    await asyncio.sleep(13)
+    await zz1.delete()
     
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
