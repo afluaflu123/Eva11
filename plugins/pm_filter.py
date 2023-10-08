@@ -974,13 +974,18 @@ async def manual_filters(client, message, text=False):
                 try:
                     if fileid == "None":
                         if btn == "[]":
-                            kk = await client.send_message(group_id, reply_text, disable_web_page_preview=True)
+                            kk = await client.send_message(
+                                group_id,
+                                reply_text, 
+                                disable_web_page_preview=True,
+                                reply_to_message_id=reply_id
+                            )
                             await asyncio.sleep(40)
                             await kk.delete()
                             await message.delete()
                         else:
                             button = eval(btn)
-                            grpid = await client.send_message(
+                            grg = await client.send_message(
                                 group_id,
                                 reply_text,
                                 disable_web_page_preview=True,
@@ -988,7 +993,7 @@ async def manual_filters(client, message, text=False):
                                 reply_to_message_id=reply_id
                             )
                             await asyncio.sleep(40)
-                            await grpid.delete()
+                            await grg.delete()
                             await message.delete()
                     elif btn == "[]":
                         joelkb = await client.send_cached_media(
