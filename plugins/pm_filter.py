@@ -987,28 +987,37 @@ async def manual_filters(client, message, text=False):
                             await client.send_message(group_id, reply_text, disable_web_page_preview=True)
                         else:
                             button = eval(btn)
-                            await client.send_message(
+                            joe = await client.send_message(
                                 group_id,
                                 reply_text,
                                 disable_web_page_preview=True,
                                 reply_markup=InlineKeyboardMarkup(button),
                                 reply_to_message_id=reply_id
                             )
+                            await asyncio.sleep(80)
+                            await joe.delete()
+                            await message.delete()
                     elif btn == "[]":
-                        await client.send_cached_media(
+                        hmm = await client.send_cached_media(
                             group_id,
                             fileid,
                             caption=reply_text or "",
                             reply_to_message_id=reply_id
                         )
+                        await asyncio.sleep(80)
+                        await hmm.delete()
+                        await message.delete()
                     else:
                         button = eval(btn)
-                        await message.reply_cached_media(
+                        kk = await message.reply_cached_media(
                             fileid,
                             caption=reply_text or "",
                             reply_markup=InlineKeyboardMarkup(button),
                             reply_to_message_id=reply_id
                         )
+                        await asyncio.sleep(80)
+                        await kk.delete()
+                        await message.delete()
                 except Exception as e:
                     logger.exception(e)
                 break
@@ -1040,7 +1049,7 @@ async def global_filters(client, message, text=False):
                                 disable_web_page_preview=True,
                                 reply_to_message_id=reply_id
                             )
-                            await asyncio.sleep(20)
+                            await asyncio.sleep(80)
                             await joelkb.delete()
                             await message.delete()
                             
@@ -1053,7 +1062,7 @@ async def global_filters(client, message, text=False):
                                 reply_markup=InlineKeyboardMarkup(button),
                                 reply_to_message_id=reply_id
                             )
-                            await asyncio.sleep(20)
+                            await asyncio.sleep(80)
                             await hmm.delete()
                             await message.delete()
 
@@ -1064,7 +1073,7 @@ async def global_filters(client, message, text=False):
                             caption=reply_text or "",
                             reply_to_message_id=reply_id
                         )
-                        await asyncio.sleep(20)
+                        await asyncio.sleep(80)
                         await oto.delete()
                         await message.delete()
 
@@ -1076,7 +1085,7 @@ async def global_filters(client, message, text=False):
                             reply_markup=InlineKeyboardMarkup(button),
                             reply_to_message_id=reply_id
                         )
-                        await asyncio.sleep(20)
+                        await asyncio.sleep(80)
                         await dlt.delete()
                         await message.delete()
  
