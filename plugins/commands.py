@@ -505,14 +505,16 @@ async def settings(client, message):
 
         reply_markup = InlineKeyboardMarkup(buttons)
 
-        await message.reply_text(
+        k = await message.reply_text(
             text=f"<b>Change Your Settings for {title} As Your Wish ⚙</b>",
             reply_markup=reply_markup,
             disable_web_page_preview=True,
             parse_mode=enums.ParseMode.HTML,
             reply_to_message_id=message.id
         )
-
+        await asyncio.sleep(40)
+        await msg.delete()
+        await k.delete()
 
 
 @Client.on_message(filters.command('set_template'))
