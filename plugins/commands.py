@@ -512,8 +512,8 @@ async def settings(client, message):
             parse_mode=enums.ParseMode.HTML,
             reply_to_message_id=message.id
         )
-        await asyncio.sleep(40)
-        await msg.delete()
+        await asyncio.sleep(10)
+        await message.delete()
         await k.delete()
 
 
