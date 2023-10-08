@@ -12,7 +12,7 @@ import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
 from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, FILE_CHANNEL, CUSTOM_FILE_CAPTION, LOG_CHANNEL, AUTH_GROUPS, REQ_CHANNEL, P_TTI_SHOW_OFF, IMDB, \
-    SINGLE_BUTTON, SPELL_CHECK_REPLY, PICS, FILE_FORWARD, MAIN_CHANNEL, IMDB_TEMPLATE
+    SINGLE_BUTTON, SPELL_CHECK_REPLY, PICS, FILE_FORWARD, SPELL_IMG, MAIN_CHANNEL, IMDB_TEMPLATE
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -952,19 +952,16 @@ async def advantage_spell_chok(msg):
         await k.delete()
         return
     SPELL_CHECK[msg.id] = movielist
-    btn = [[
-        InlineKeyboardButton(
-            text=movie.strip(),
-            callback_data=f"spolling#{user}#{k}",
-        )
-    ] for k, movie in enumerate(movielist)]
-    btn.append([InlineKeyboardButton(text="Close", callback_data=f'spolling#{user}#close_spellcheck')])
-    zz = await msg.reply('<b><i>Searching for you result in imdb Wait...🧐<i/></b>')
-    await asyncio.sleep(1)
-    zz1 = await zz.edit("<b><i>I couldn't find anything related to that Did you mean any one of these?\n\nനിങ്ങൾ ഉദ്ദേശിച്ച മൂവി താഴെ കാണുന്ന വല്ലോം ആണ് എങ്കിൽ.അതിൽ ക്ലിക്ക് ചെയ്യുക</i></b>",
-                    reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(13)
-    await zz1.delete()
+        btn = [[
+        InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={mv_rqst}'),
+        InlineKeyboardButton(' 🔍 IMDB 🔎', url=f'https://www.imdb.com/find/?q={mv_rqst}&ref_=nv_sr_sm')
+    ],[
+        InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+    ]]
+    k=await msg.reply_photo(photo=SPELL_IMG, caption=script.I_CUDNT, reply_markup=InlineKeyboardMarkup(btn))    
+    await asyncio.sleep(30)
+    await k.delete()
+    await msg.delete()
     
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
