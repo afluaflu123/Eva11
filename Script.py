@@ -128,6 +128,26 @@ Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ 
 ⎇ Usᴇᴅ Sᴛᴏʀᴀɢᴇ: <code>{}</code> Mɪʙ
 ⎇ Fʀᴇᴇ Sᴛᴏʀᴀɢᴇ: <code>{}</code> Mɪʙ</b>"""
 
+    ALRT_TXT = """Hello {},
+This is Not your Request
+Request Yourself...!!"""
+
+    OLD_ALRT_TXT = """Hey {},
+You are using one of old message,
+Request Again"""
+
+    CHK_MOV_TXT = """ 𝖢𝗁𝖾𝖼𝗄𝗂𝗇𝗀 𝖿𝗈𝗋 𝗊𝗎𝖾𝗋𝗒 𝗂𝗇 𝖣𝖺𝗍𝖺𝖻𝖺𝗌𝖾 >>> """
+    
+    MVE_NT_FND = """❌ <b>𝖨 𝖼𝗈𝗎𝗅𝖽𝗇'𝗍 𝖿𝗂𝗇𝖽 𝖺𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝗋𝖾𝗅𝖺𝗍𝖾𝖽 𝗍𝗈 𝗍𝗁𝖺𝗍</b>\n\n‼ <b><i>𝖱𝖾𝗉𝗈𝗋𝗍 𝗍𝗈 𝖺𝖽𝗆𝗂𝗇 ▶ @im_goutham_josh</i></b>"""
+    
+    SPOLL_NOT_FND = """ I Couldn't Find the FILE you requested
+Try to do the following...
+ 
+➤ Request with Correct Spelling.
+➤ Don't ask movies that are NOT REALEASED in OTT PLATFORM.
+➤ Try to ask in [Moviename, Language] this format.
+➤Use the Button below to search on Google Or IMDB. """
+
     LOG_TEXT_G = """#NewGroup
 Group = {}(<code>{}</code>)
 Total Members = <code>{}</code>
