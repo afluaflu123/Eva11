@@ -150,14 +150,14 @@ async def next_page(bot, query):
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)  #alrtxtincript
+        return await query.answer(script.I_CUDNT.format(query.from_user.first_name), show_alert=True)  #alrtxtincript
     if movie_ == "close_spellcheck":
         return await query.message.delete()
     movies = SPELL_CHECK.get(query.message.reply_to_message.id)
     if not movies:
-        return await query.answer(script.OLD_ALRT_TXT.format(query.from_user.first_name), show_alert=True)   #oldalrttxt in script
+        return await query.answer(script.I_CUDNT.format(query.from_user.first_name), show_alert=True)   #oldalrttxt in script
     movie = movies[(int(movie_))]
-    await query.answer(script.CHK_MOV_TXT)  #checkthemovie in db script
+    await query.answer(script.I_CUDNT)  #checkthemovie in db script
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
@@ -165,7 +165,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit(script.MVE_NT_FND)  #scriltmovienotfound
+            k = await query.message.edit(script.I_CUDNT)  #scriltmovienotfound
             await asyncio.sleep(9)
             await k.delete()
 
@@ -488,13 +488,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         T = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
         Time = T.hour        
         if Time < 12:
-            afsu="🌞 Gᴏᴏᴅ Mᴏʀɴɪɴɢ" 
+            afsu="Gᴏᴏᴅ Mᴏʀɴɪɴɢ" 
         elif Time < 15:
-            afsu="🌤 Gᴏᴏᴅ AғᴛᴇʀNᴏᴏɴ" 
+            afsu="Gᴏᴏᴅ AғᴛᴇʀNᴏᴏɴ" 
         elif Time < 20:
-            afsu="☕️ Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
+            afsu="Gᴏᴏᴅ Eᴠᴇɴɪɴɢ"
         else:
-            afsu="🌙 Gᴏᴏᴅ Nɪɢʜᴛ"
+            afsu="Gᴏᴏᴅ Nɪɢʜᴛ"
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
@@ -939,7 +939,7 @@ async def advantage_spell_chok(client, msg):
              ]]
         
         k = await msg.reply_text(
-            text=script.SPOLL_NOT_FND, #IN SCRIPT CHANGE DONOT CHANGE CODE
+            text=script.I_CUDNT, #IN SCRIPT CHANGE DONOT CHANGE CODE
             reply_markup=InlineKeyboardMarkup(button),
             reply_to_message_id=msg.id
         )
@@ -954,7 +954,7 @@ async def advantage_spell_chok(client, msg):
                  InlineKeyboardButton('🔰 ɪᴍᴅʙ ', url=f"https://imdb.com/find?q={reqst_imd}") 
              ]]
         k = await msg.reply_text(
-            text=script.SPOLL_NOT_FND,  #DONOTCHANGE IN THIS CODE PLS CHANGE IN SCRIPT
+            text=script.I_CUDNT,  #DONOTCHANGE IN THIS CODE PLS CHANGE IN SCRIPT
             reply_markup=InlineKeyboardMarkup(button),
             reply_to_message_id=msg.id
         )
