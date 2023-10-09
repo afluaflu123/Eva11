@@ -173,7 +173,7 @@ async def advantage_spoll_choker(bot, query):
             await auto_filter(bot, query, k)
         else:
             k = await query.message.edit(
-                text=script.MVE_NT_FND
+                text=script.MVE_NT_FND,
                 reply_markup=InlineKeyboardMarkup(button)
             )                                      
             await asyncio.sleep(20)
