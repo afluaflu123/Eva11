@@ -147,12 +147,7 @@ async def next_page(bot, query):
     await query.answer()
 
 @Client.on_callback_query(filters.regex(r"^spol"))
-async def advantage_spoll_choker(bot, msg, query): 
-    mv_id = msg.id
-    mv_rqst = msg.text
-    reqstr1 = msg.from_user.id if msg.from_user else 0
-    reqstr = await client.get_users(reqstr1)
-    settings = await get_settings(msg.chat.id)
+async def advantage_spoll_choker(bot, query): 
     _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
         return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)  #alrtxtincript
@@ -164,10 +159,7 @@ async def advantage_spoll_choker(bot, msg, query):
     movie = movies[(int(movie_))]
     temp_name = movie.replace(" ", "+")
     button = [[
-        InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={mv_rqst}'),
-        InlineKeyboardButton(' 🔍 IMDB 🔎', url=f'https://www.imdb.com/find/?q=&ref_=nv_sr_sm')
-    ],[
-        InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+        InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q=')               
     ]]
     await query.message.edit(script.CHK_MOV_TXT) 
     k = await manual_filters(bot, query.message, text=movie)
