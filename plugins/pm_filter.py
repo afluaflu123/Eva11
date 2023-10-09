@@ -932,33 +932,32 @@ async def advantage_spell_chok(client, msg):
         movies = await get_poster(mv_rqst, bulk=True)
     except Exception as e:
         logger.exception(e)
-        reqst_imd = reqst_gle = mv_rqst.replace(" ", "+")
+        reqst_gle = mv_rqst.replace(" ", "+")
         button = [[
-                 InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://www.google.com/search?q={reqst_gle}"),
-                 InlineKeyboardButton('🔰 ɪᴍᴅʙ ', url=f"https://imdb.com/find?q={reqst_imd}")
-             ]]
-        
+        InlineKeyboardButton('🔍 ѕєαяϲн οи gοοgℓє​ 🔎', url=f"https://www.google.com/search?q={reqst_gle}")            
+        ]]
         k = await msg.reply_text(
-            text=script.SPOLL_NOT_FND, #IN SCRIPT CHANGE DONOT CHANGE CODE
+            text=("<b>▪️ᴜꜱᴇ ᴛʜᴇ ʙᴇʟᴏᴡ Gᴏᴏɢʟᴇ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄᴏᴘʏ ᴛʜᴇ ᴄᴏʀʀᴇᴄᴛ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ᴀɴᴅ ᴘᴀꜱᴛᴇ 😌\n\n▪️താഴെ കാണുന്ന ഗൂഗിൾ ബട്ടൺ ക്ലിക്ക് ചെയ്ത് കറക്റ്റ് സ്പെല്ലിങ് കോപ്പി ചെയ്ത ശേഷം ഗ്രൂപ്പിൽ സെർച്ച്‌ ചെയ്യുക 🤗</b>"),
             reply_markup=InlineKeyboardMarkup(button),
             reply_to_message_id=msg.id
         )
-        await asyncio.sleep(45)
+        await asyncio.sleep(30)
+        await msg.delete()
         await k.delete()      
         return
     movielist = []
     if not movies:
-        reqst_imd = reqst_gle = mv_rqst.replace(" ", "+")
+        reqst_gle = mv_rqst.replace(" ", "+")
         button = [[
-                 InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://www.google.com/search?q={reqst_gle}"),
-                 InlineKeyboardButton('🔰 ɪᴍᴅʙ ', url=f"https://imdb.com/find?q={reqst_imd}") 
-             ]]
+        InlineKeyboardButton('🔍 ѕєαяϲн οи gοοgℓє​ 🔎', url=f"https://www.google.com/search?q={reqst_gle}")   
+        ]]
         k = await msg.reply_text(
-            text=script.SPOLL_NOT_FND,  #DONOTCHANGE IN THIS CODE PLS CHANGE IN SCRIPT
+            text=("<b>▪️ᴜꜱᴇ ᴛʜᴇ ʙᴇʟᴏᴡ Gᴏᴏɢʟᴇ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄᴏᴘʏ ᴛʜᴇ ᴄᴏʀʀᴇᴄᴛ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ᴀɴᴅ ᴘᴀꜱᴛᴇ 😌\n\n▪️താഴെ കാണുന്ന ഗൂഗിൾ ബട്ടൺ ക്ലിക്ക് ചെയ്ത് കറക്റ്റ് സ്പെല്ലിങ് കോപ്പി ചെയ്ത ശേഷം ഗ്രൂപ്പിൽ സെർച്ച്‌ ചെയ്യുക 🤗</b>"),
             reply_markup=InlineKeyboardMarkup(button),
             reply_to_message_id=msg.id
         )
-        await asyncio.sleep(45)
+        await asyncio.sleep(30)
+        await msg.delete()
         await k.delete()
         return
     movielist = [movie.get('title') for movie in movies]
@@ -973,13 +972,14 @@ async def advantage_spell_chok(client, msg):
         for k, movie_name in enumerate(movielist)
     ]
     btn.append([InlineKeyboardButton(text="✘ ᴄʟᴏsᴇ ✘", callback_data=f'spol#{reqstr1}#close_spellcheck')])
-    spell_check_del = await msg.reply_text(
+    spell = await msg.reply_text(
         text="<b>Sᴘᴇʟʟɪɴɢ Mɪꜱᴛᴀᴋᴇ Bʀᴏ ‼️\n\nᴅᴏɴ'ᴛ ᴡᴏʀʀʏ 😊 Cʜᴏᴏꜱᴇ ᴛʜᴇ ᴄᴏʀʀᴇᴄᴛ ᴏɴᴇ ʙᴇʟᴏᴡ 👇</b>",
         reply_markup=InlineKeyboardMarkup(btn),
         reply_to_message_id=msg.id
     )
-    await asyncio.sleep(600)
-    await spell_check_del.delete()
+    await asyncio.sleep(25)
+    await spell.delete()
+    await msg.delete()
     
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
