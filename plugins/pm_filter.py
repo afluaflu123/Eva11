@@ -157,6 +157,13 @@ async def advantage_spoll_choker(bot, query):
     if not movies:
         return await query.answer(script.OLD_ALRT_TXT.format(query.from_user.first_name), show_alert=True)   #oldalrttxt in script
     movie = movies[(int(movie_))]
+    temp_name = movie.replace(" ", "+")
+    button = [[
+        InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={mv_rqst}'),
+        InlineKeyboardButton(' 🔍 IMDB 🔎', url=f'https://www.imdb.com/find/?q={mv_rqst}&ref_=nv_sr_sm')
+    ],[
+        InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+    ]]
     await query.message.edit(script.CHK_MOV_TXT) 
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
@@ -165,8 +172,11 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit(script.MVE_NT_FND)  #scriltmovienotfound
-            await asyncio.sleep(9)
+            k = await query.message.edit(
+                text=script.MVE_NT_FND
+                reply_markup=InlineKeyboardMarkup(button)
+            )                                      
+            await asyncio.sleep(20)
             await k.delete()
 
 @Client.on_callback_query()
@@ -977,7 +987,7 @@ async def advantage_spell_chok(client, msg):
         reply_markup=InlineKeyboardMarkup(btn),
         reply_to_message_id=msg.id
     )
-    await asyncio.sleep(25)
+    await asyncio.sleep(20)
     await spell.delete()
     await msg.delete()
     
