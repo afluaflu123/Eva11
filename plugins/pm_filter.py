@@ -536,23 +536,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.HELP_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "malspell":
-        btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={mv_rqst}'),
-            InlineKeyboardButton(' 🔍 IMDB 🔎', url=f'https://www.imdb.com/find/?q={mv_rqst}&ref_=nv_sr_sm')
-        ],[
-            InlineKeyboardButton("🇺🇸 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇸", callback_data="engspell")
-        ]] 
-        await query.message.edit_text(script.I_CUDNT, reply_markup=InlineKeyboardMarkup(btn))
-    elif query.data == "engspell":
-        btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={mv_rqst}'),
-            InlineKeyboardButton(' 🔍 IMDB 🔎', url=f'https://www.imdb.com/find/?q={mv_rqst}&ref_=nv_sr_sm')
-        ],[
-            InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
-        ]] 
-        await query.message.edit_text(script.I_CUDNT, reply_markup=InlineKeyboardMarkup(btn))
+        )            
     elif query.data == "about":
         buttons = [[
             InlineKeyboardButton('〄 Sᴛᴀᴛᴜs', callback_data='stats'),
@@ -944,10 +928,8 @@ async def advantage_spell_chok(client, msg):
         logger.exception(e)
         reqst_gle = mv_rqst.replace(" ", "+")
         button = [[
-        InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={mv_rqst}'),
-        InlineKeyboardButton(' 🔍 IMDB 🔎', url=f'https://www.imdb.com/find/?q={mv_rqst}&ref_=nv_sr_sm')
-        ],[
-        InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+        InlineKeyboardButton('⌬ ᧁꪮꪮᧁꪶꫀ ⌬', url=f'https://google.com/search?q={mv_rqst}'),
+        InlineKeyboardButton('✽ 𝓲ꪑᦔ᥇ ✽', url=f'https://www.imdb.com/find/?q={mv_rqst}&ref_=nv_sr_sm')
         ]]
         k = await msg.reply_text(
             text=("<b>▪️ᴜꜱᴇ ᴛʜᴇ ʙᴇʟᴏᴡ Gᴏᴏɢʟᴇ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄᴏᴘʏ ᴛʜᴇ ᴄᴏʀʀᴇᴄᴛ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ᴀɴᴅ ᴘᴀꜱᴛᴇ 😌\n\n▪️താഴെ കാണുന്ന ഗൂഗിൾ ബട്ടൺ ക്ലിക്ക് ചെയ്ത് കറക്റ്റ് സ്പെല്ലിങ് കോപ്പി ചെയ്ത ശേഷം ഗ്രൂപ്പിൽ സെർച്ച്‌ ചെയ്യുക 🤗</b>"),
