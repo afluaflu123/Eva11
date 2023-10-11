@@ -157,6 +157,10 @@ async def advantage_spoll_choker(bot, query):
     if not movies:
         return await query.answer(script.OLD_ALRT_TXT.format(query.from_user.first_name), show_alert=True)   #oldalrttxt in script
     movie = movies[(int(movie_))]
+    temp_name = movie.replace(" ", "+")
+    button = [[
+        InlineKeyboardButton('♽ Mᴏᴠɪᴇ Rᴇᴏ̨ᴜᴇsᴛ Gʀᴏᴜᴘ ♽", url="t.me/+3sc743KKHWoxZDY1")
+    ]]
     await query.message.edit(script.CHK_MOV_TXT)  #checkthemovie in db script
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
@@ -166,7 +170,9 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit(script.MVE_NT_FND)  #scriltmovienotfound
+            k = await query.message.edit(
+                text=script.MVE_NT_FND,
+                reply_markup=InlineKeyboardMarkup(button))  #scriltmovienotfound
             await asyncio.sleep(20)
             await k.delete()
 
@@ -931,8 +937,9 @@ async def advantage_spell_chok(client, msg):
         InlineKeyboardButton('⌬ ᧁꪮꪮᧁꪶꫀ ⌬', url=f'https://google.com/search?q={mv_rqst}'),
         InlineKeyboardButton('✽ 𝓲ꪑᦔ᥇ ✽', url=f'https://www.imdb.com/find/?q={mv_rqst}&ref_=nv_sr_sm')
         ]]
-        k = await msg.reply_text(
-            text=("<b>▪️ᴜꜱᴇ ᴛʜᴇ ʙᴇʟᴏᴡ Gᴏᴏɢʟᴇ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄᴏᴘʏ ᴛʜᴇ ᴄᴏʀʀᴇᴄᴛ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ᴀɴᴅ ᴘᴀꜱᴛᴇ 😌\n\n▪️താഴെ കാണുന്ന ഗൂഗിൾ ബട്ടൺ ക്ലിക്ക് ചെയ്ത് കറക്റ്റ് സ്പെല്ലിങ് കോപ്പി ചെയ്ത ശേഷം ഗ്രൂപ്പിൽ സെർച്ച്‌ ചെയ്യുക 🤗</b>"),
+        k = await msg.reply_photo(
+            photo=SPELL_IMG, 
+            caption=script.SPEL_CHK.format(mv_rqst),
             reply_markup=InlineKeyboardMarkup(button),
             reply_to_message_id=msg.id
         )
@@ -947,8 +954,9 @@ async def advantage_spell_chok(client, msg):
         InlineKeyboardButton('⌬ ᧁꪮꪮᧁꪶꫀ ⌬', url=f'https://google.com/search?q={mv_rqst}'),
         InlineKeyboardButton('✽ 𝓲ꪑᦔ᥇ ✽', url=f'https://www.imdb.com/find/?q={mv_rqst}&ref_=nv_sr_sm')
         ]]
-        k = await msg.reply_text(
-            text=("<b>▪️ᴜꜱᴇ ᴛʜᴇ ʙᴇʟᴏᴡ Gᴏᴏɢʟᴇ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄᴏᴘʏ ᴛʜᴇ ᴄᴏʀʀᴇᴄᴛ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ᴀɴᴅ ᴘᴀꜱᴛᴇ 😌\n\n▪️താഴെ കാണുന്ന ഗൂഗിൾ ബട്ടൺ ക്ലിക്ക് ചെയ്ത് കറക്റ്റ് സ്പെല്ലിങ് കോപ്പി ചെയ്ത ശേഷം ഗ്രൂപ്പിൽ സെർച്ച്‌ ചെയ്യുക 🤗</b>"),
+        k = await msg.reply_photo(
+            photo=SPELL_IMG, 
+            caption=script.SPEL_CHK.format(mv_rqst),
             reply_markup=InlineKeyboardMarkup(button),
             reply_to_message_id=msg.id
         )
