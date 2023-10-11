@@ -12,7 +12,7 @@ import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
 from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, FILE_CHANNEL, CUSTOM_FILE_CAPTION, LOG_CHANNEL, AUTH_GROUPS, REQ_CHANNEL, P_TTI_SHOW_OFF, IMDB, \
-    SINGLE_BUTTON, SPELL_CHECK_REPLY, PICS, FILE_FORWARD, SPELL_IMG, MAIN_CHANNEL, IMDB_TEMPLATE
+    SINGLE_BUTTON, SPELL_CHECK_REPLY, PICS, FILE_FORWARD, SPELL_IMG, MAIN_CHANNEL, IMDB_TEMPLATE, NOR_IMG
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -122,20 +122,20 @@ async def next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("⇚ ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(f"〄 ᴘᴀɢᴇ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
+            [InlineKeyboardButton("⇚ Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
+             InlineKeyboardButton(f"〄 Pᴀɢᴇ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
             [InlineKeyboardButton(f"〄 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("ɴᴇxᴛ​ ​⇛", callback_data=f"next_{req}_{key}_{n_offset}")])
+             InlineKeyboardButton("Nᴇxᴛ​ ​⇛", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
-                InlineKeyboardButton("⇚ ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton("⇚ Bᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
                 InlineKeyboardButton(f"〄 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("ɴᴇxᴛ​ ​⇛", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton("Nᴇxᴛ​ ​⇛", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
     try:
@@ -174,7 +174,7 @@ async def advantage_spoll_choker(bot, query):
                 text=script.MVE_NT_FND,
                 reply_markup=InlineKeyboardMarkup(button)
             ) 
-            await asyncio.sleep(20)
+            await asyncio.sleep(25)
             await k.delete()
 
 @Client.on_callback_query()
@@ -858,11 +858,11 @@ async def auto_filter(client, msg, spoll=False):
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton(text=f"〄 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="ɴᴇxᴛ​ ​⇛", callback_data=f"next_{req}_{key}_{offset}")]
+             InlineKeyboardButton(text="Nᴇxᴛ​ ​⇛", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="〄 1/1", callback_data="pages")]
+            [InlineKeyboardButton(text="〄 1/1 〄", callback_data="pages")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
@@ -899,7 +899,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>Hey 👋🏻 {message.from_user.mention} 😍\n\n<i>📫 Your Files is Ready Now</i></b>"
+        cap = f"<b>┏ ⍞ Tɪᴛɪʟᴇ : {search}\n┣ ❐ Asᴋᴇᴅ Bʏ : {message.from_user.mention}\n┗ 〄 Pᴏᴡᴇʀᴇᴅ Bʏ : [kᴇʀᴀʟᴀ Rᴏᴄᴋᴇʀs](https://t.me/Team_KL)</b>"
     if imdb and imdb.get('poster'):
         try:
             fmsg = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
@@ -910,9 +910,9 @@ async def auto_filter(client, msg, spoll=False):
             fmsg = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
         except Exception as e:
             logger.exception(e)
-            fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+            fmsg = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
-        fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
+        fmsg = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(45)
     await fmsg.delete()
     await message.delete()
@@ -944,7 +944,7 @@ async def advantage_spell_chok(client, msg):
             reply_markup=InlineKeyboardMarkup(button),
             reply_to_message_id=msg.id
         )
-        await asyncio.sleep(30)
+        await asyncio.sleep(35)
         await msg.delete()
         await k.delete()      
         return
@@ -961,7 +961,7 @@ async def advantage_spell_chok(client, msg):
             reply_markup=InlineKeyboardMarkup(button),
             reply_to_message_id=msg.id
         )
-        await asyncio.sleep(30)
+        await asyncio.sleep(35)
         await msg.delete()
         await k.delete()
         return
@@ -970,7 +970,7 @@ async def advantage_spell_chok(client, msg):
     btn = [
         [
             InlineKeyboardButton(
-                text=f"✵ {movie_name.strip()}",
+                text=f"◉ {movie_name.strip()}",
                 callback_data=f"spol#{reqstr1}#{k}",
             )
         ]
@@ -982,7 +982,7 @@ async def advantage_spell_chok(client, msg):
         reply_markup=InlineKeyboardMarkup(btn),
         reply_to_message_id=msg.id
     )
-    await asyncio.sleep(20)
+    await asyncio.sleep(25)
     await spell_check_del.delete()
     await msg.delete()
 
