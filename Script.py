@@ -55,6 +55,13 @@ Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ 
 • /disconnect  - <code>disconnect from a chat</code>
 • /connections - <code>list all your connections</code>"""
 
+     IMDB_TEMPLATE_TXT = """
+<b>⍞ TɪᴛLᴇ : {title}
+⌬ YᴇAʀ : {year}
+✇ LᴀNɢUᴀGᴇ : {languages}
+⛦ RᴀTɪNɢ : {rating} / 10.0
+〄 QᴜAʟIᴛY : HDRip</b>"""
+   
     CUSTOM_FILE_CAPTION = """<b>⋟ Fɪʟᴇ Nᴀᴍᴇ :- {file_name}
 
 ⋟ Fɪʟᴇ Sɪᴢᴇ :- {file_size}
