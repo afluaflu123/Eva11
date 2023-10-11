@@ -140,7 +140,7 @@ Request Again"""
 
     SPEL_CHK = """<b>🥺 Sorry No File Found {} 
 
-▫️Use The Button Below To Search On <u>Google/u> Or <u>IMDB</u> And Copy The Correct Movie Name And Paste..!!
+▫️Use The Button Below To Search On <u>Google</u> Or <u>IMDB</u> And Copy The Correct Movie Name And Paste..!!
 
 ▪️Don't Ask Movies That Are Not Released In OTT Platform..!!
 
