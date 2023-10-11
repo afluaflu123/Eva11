@@ -22,7 +22,7 @@ CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 PICS = (environ.get('PICS', 'https://telegra.ph/file/35fc08358edc12cc1e21e.jpg')).split()
 NOR_IMG = environ.get('NOR_IMG', 'https://telegra.ph/file/890be6028de4a061e098d.jpg')
-SPELL_IMG = environ.get('SPELL_IMG',"https://graph.org/file/cd9d7825d4c11195c19df.jpg")
+SPELL_IMG = (environ.get('SPELL_IMG',"https://telegra.ph/file/60d2e897bfdf063f81545.jpg https://graph.org/file/cd9d7825d4c11195c19df.jpg")).split()
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1820988170').split()]
@@ -41,13 +41,14 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '0'))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Team_KL')
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '@Team_KL')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
 MAIN_CHANNEL = environ.get('MAIN_CHANNEL',"https://t.me/Team_KL")
 FILE_FORWARD = environ.get('FILE_FORWARD',"https://t.me/+l9GB88_DrDhiNmFl")
 MSG_ALRT = environ.get('MSG_ALRT', '⏤͟͟͞ ♡ Nᴀɴᴄʏ ᵛ³·⁰ 🦄')
 FILE_CHANNEL = int(environ.get('FILE_CHANNEL', 0))
+DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), True)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", f"{script.CUSTOM_FILE_CAPTION}")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
