@@ -90,7 +90,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"⎆ [{get_size(file.file_size)}] ⊳ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'files#{file.file_id}'
+                    text=f"★ {get_size(file.file_size)} ⊳ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -111,7 +111,7 @@ async def next_page(bot, query):
     btn.insert(0, 
         [
             InlineKeyboardButton(f'⎙ Fɪʟᴇs: {total}', 'neosub'),
-            InlineKeyboardButton(f'⟮ Iɴꜰᴏ ⟯', 'reqinfo')
+            InlineKeyboardButton(f'⌗ Iɴꜰᴏ', 'reqinfo')
         ]
     )
     if 0 < offset <= 10:
@@ -123,19 +123,19 @@ async def next_page(bot, query):
     if n_offset == 0:
         btn.append(
             [InlineKeyboardButton("⇚ ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(f"➶ ᴘᴀɢᴇ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
+             InlineKeyboardButton(f"〄 ᴘᴀɢᴇ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
-            [InlineKeyboardButton(f"➶ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("ɴᴇxᴛ​ ➾", callback_data=f"next_{req}_{key}_{n_offset}")])
+            [InlineKeyboardButton(f"〄 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
+             InlineKeyboardButton("ɴᴇxᴛ​ ​⇛", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
                 InlineKeyboardButton("⇚ ʙᴀᴄᴋ", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"➶ {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("ɴᴇxᴛ​ ➾", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton(f"〄 {math.ceil(int(offset) / 10) + 1} / {math.ceil(total / 10)}", callback_data="pages"),
+                InlineKeyboardButton("ɴᴇxᴛ​ ​⇛", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
     try:
@@ -698,7 +698,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "rfrsh":
-        await query.answer("🌱 𝗙𝗘𝗧𝗖𝗛𝗜𝗡𝗚 𝗠𝗢𝗡𝗚𝗢𝗗𝗕 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘")
+        await query.answer(" 𝗙𝗘𝗧𝗖𝗛𝗜𝗡𝗚 𝗠𝗢𝗡𝗚𝗢𝗗𝗕 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘")
         buttons = [[
             InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='about'),
             InlineKeyboardButton('↺ Rᴇғʀᴇsʜ', callback_data='rfrsh')
@@ -827,7 +827,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"⎆ [{get_size(file.file_size)}] ⊳ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"★ {get_size(file.file_size)} ⊳ {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -849,7 +849,7 @@ async def auto_filter(client, msg, spoll=False):
     btn.insert(0, 
         [
             InlineKeyboardButton(f"⇓ {search} ⇓", "neosub"),
-            InlineKeyboardButton(f"⟮ Iɴꜰᴏ ⟯", "reqinfo")       
+            InlineKeyboardButton(f"⌗ Iɴꜰᴏ", "reqinfo")       
         ]
     )
     if offset != "":
@@ -857,12 +857,12 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"➶ 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="ɴᴇxᴛ​ ⇛", callback_data=f"next_{req}_{key}_{offset}")]
+            [InlineKeyboardButton(text=f"〄 1/{math.ceil(int(total_results) / 10)}", callback_data="pages"),
+             InlineKeyboardButton(text="ɴᴇxᴛ​ ​⇛", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="➶ 1/1", callback_data="pages")]
+            [InlineKeyboardButton(text="〄 1/1", callback_data="pages")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
