@@ -54,13 +54,13 @@ async def pm_text(bot, message):
     if user_id in ADMINS: return # ignore admins
     k = await message.reply_text(
          text="<b><i>ʜᴇʏ ᴅᴜᴅᴇ, ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ᴏɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ​</i>👇</b>",   
-         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ​ ", url=f"https://t.me/KLMovieGroup")]]))
-    await asyncio.sleep(8)
+         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🎗️ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ​ 🎗️", url=f"https://t.me/KLMovieGroup")]]))
+    await asyncio.sleep(15)
     await k.delete()
     await message.delete()
     await bot.send_message(
         chat_id=LOG_CHANNEL,
-        text=f"<b>🌹 𝗣𝗠 𝗠𝗘𝗦𝗦𝗔𝗚𝗘 🌹\n\n📝 Mᴇssᴀɢᴇ ​:- {content}\n\n🤷 RᴇQᴜᴇꜱᴛᴇᴅ Bʏ :- {user}\n\n😋 Uꜱᴇʀ Iᴅ :- {user_id}</b>"
+        text=f"<b>🍀 Pᴍ Mᴇssᴀɢᴇ ☘️\n\n📝 Mᴇssᴀɢᴇ ​:- {content}\n\n🤷 RᴇQᴜᴇꜱᴛᴇᴅ Bʏ :- {user}\n\n😋 Uꜱᴇʀ Iᴅ :- {user_id}</b>"
     )
 
 @Client.on_callback_query(filters.regex(r"^next"))
@@ -167,7 +167,7 @@ async def advantage_spoll_choker(bot, query):
             await auto_filter(bot, query, k)
         else:
             k = await query.message.edit(script.MVE_NT_FND)  #scriltmovienotfound
-            await asyncio.sleep(15)
+            await asyncio.sleep(20)
             await k.delete()
 
 @Client.on_callback_query()
@@ -530,16 +530,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "malspell":
         btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
-            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={mv_rqst}'),
+            InlineKeyboardButton(' 🔍 IMDB 🔎', url=f'https://www.imdb.com/find/?q={mv_rqst}&ref_=nv_sr_sm')
         ],[
             InlineKeyboardButton("🇺🇸 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇸", callback_data="engspell")
         ]] 
         await query.message.edit_text(script.I_CUDNT, reply_markup=InlineKeyboardMarkup(btn))
     elif query.data == "engspell":
         btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
-            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={mv_rqst}'),
+            InlineKeyboardButton(' 🔍 IMDB 🔎', url=f'https://www.imdb.com/find/?q={mv_rqst}&ref_=nv_sr_sm')
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]] 
