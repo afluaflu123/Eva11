@@ -136,38 +136,30 @@ Request Yourself...!!"""
 You are using one of old message,
 Request Again"""
 
-    CHK_MOV_TXT = """<b>Sᴇᴀʀᴄʜɪɴɢ Yᴏᴜʀ Rᴇꜱᴜʟᴛꜱ 🥴</b>"""
+    CHK_MOV_TXT = """<b>Sᴇᴀʀᴄʜɪɴɢ Rᴇꜱᴜʟᴛꜱ. 🥴</b>"""
 
-    SPEL_CHK = """<b>🥺 Sorry No File Found {} 🤒 
+    SPEL_CHK = """<b>🥺 Sorry No File Found {} 
 
-▫️Use The Below Google Button And Copy The Correct Movie Name And Paste..!!
+▫️Use The Button Below To Search On <u>Google/u> Or <u>IMDB</u> And Copy The Correct Movie Name And Paste..!!
 
-▪️Check If The Movie You Asked For Is An OTT Release..!!
+▪️Don't Ask Movies That Are Not Released In OTT Platform..!!
 
-▫️സിനിമയുടെ സ്പെല്ലിങ്ങ് ഗൂഗിളിൽ ഉള്ളത് പോലെ ആണോ നിങ്ങൾ അടിച്ചത് എന്ന് ഉറപ്പ് വരുത്തുക..!!
+▫️Request With Correct Spelling..!!
 
-▪️ നിങ്ങൾ ചോദിച്ച സിനിമ OTT റിലീസ് ആയതാണോ എന്ന് ചെക്ക് ചെയ്യുക..!!
+▪️Try To Ask In [Moviename, Year, Language] This Format..!! 
 
 🚯 Don't Use: ➠ ':(!,./) 🙅‍♂</b>"""
     
-    MVE_NT_FND = """<b>⚙ This Movie Not Available 😢
+    MVE_NT_FND = """<b>This Movie Not Available 😢
 
-🤠 For Reasons 👀
+🤠 <u>For Reasons</u> 👀
 
 ◉) OTT Or DVD Not Released..!
 ◉) Type Name With Year..!
 ◉) check your correct spelling..!
 ◉) Movie Is Not Available in My Database..!
 ◉) Not Available Theater Print 🥴..!</b>"""
-    
-    SPOLL_NOT_FND = """ I Couldn't Find the FILE you requested
-Try to do the following...
- 
-➤ Request with Correct Spelling.
-➤ Don't ask movies that are NOT REALEASED in OTT PLATFORM.
-➤ Try to ask in [Moviename, Language] this format.
-➤Use the Button below to search on Google Or IMDB. """
-
+       
     LOG_TEXT_G = """#NewGroup
 Group = {}(<code>{}</code>)
 Total Members = <code>{}</code>
