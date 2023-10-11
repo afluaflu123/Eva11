@@ -136,9 +136,29 @@ Request Yourself...!!"""
 You are using one of old message,
 Request Again"""
 
-    CHK_MOV_TXT = """ 𝖢𝗁𝖾𝖼𝗄𝗂𝗇𝗀 𝖿𝗈𝗋 𝗊𝗎𝖾𝗋𝗒 𝗂𝗇 𝖣𝖺𝗍𝖺𝖻𝖺𝗌𝖾 >>> """
+    CHK_MOV_TXT = """<b>Sᴇᴀʀᴄʜɪɴɢ Yᴏᴜʀ Rᴇꜱᴜʟᴛꜱ 🥴</b>"""
+
+    SPEL_CHK = """<b>🥺 Sorry No File Found {} 🤒 
+
+▫️Use The Below Google Button And Copy The Correct Movie Name And Paste..!!
+
+▪️Check If The Movie You Asked For Is An OTT Release..!!
+
+▫️സിനിമയുടെ സ്പെല്ലിങ്ങ് ഗൂഗിളിൽ ഉള്ളത് പോലെ ആണോ നിങ്ങൾ അടിച്ചത് എന്ന് ഉറപ്പ് വരുത്തുക..!!
+
+▪️ നിങ്ങൾ ചോദിച്ച സിനിമ OTT റിലീസ് ആയതാണോ എന്ന് ചെക്ക് ചെയ്യുക..!!
+
+🚯 Don't Use: ➠ ':(!,./) 🙅‍♂</b>"""
     
-    MVE_NT_FND = """❌ <b>𝖨 𝖼𝗈𝗎𝗅𝖽𝗇'𝗍 𝖿𝗂𝗇𝖽 𝖺𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝗋𝖾𝗅𝖺𝗍𝖾𝖽 𝗍𝗈 𝗍𝗁𝖺𝗍</b>\n\n‼ <b><i>𝖱𝖾𝗉𝗈𝗋𝗍 𝗍𝗈 𝖺𝖽𝗆𝗂𝗇 ▶ @im_goutham_josh</i></b>"""
+    MVE_NT_FND = """<b>⚙ This Movie Not Available 😢
+
+🤠 For Reasons 👀
+
+◉) OTT Or DVD Not Released..!
+◉) Type Name With Year..!
+◉) check your correct spelling..!
+◉) Movie Is Not Available in My Database..!
+◉) Not Available Theater Print 🥴..!</b>"""
     
     SPOLL_NOT_FND = """ I Couldn't Find the FILE you requested
 Try to do the following...
