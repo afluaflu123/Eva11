@@ -60,7 +60,7 @@ async def pm_text(bot, message):
     await message.delete()
     await bot.send_message(
         chat_id=LOG_CHANNEL,
-        text=f"<b>👻 𝐏𝐌_𝐌𝐒𝐆 👻\n\n📝 Mᴇssᴀɢᴇ ​:- {content}\n\n👶🏻 RᴇQᴜᴇꜱᴛᴇᴅ Bʏ :- {user}\n\n🃏 Uꜱᴇʀ Iᴅ :- {user_id}</b>"
+        text=f"<b>🌹 𝗣𝗠 𝗠𝗘𝗦𝗦𝗔𝗚𝗘 🌹\n\n📝 Mᴇssᴀɢᴇ ​:- {content}\n\n🤷 RᴇQᴜᴇꜱᴛᴇᴅ Bʏ :- {user}\n\n😋 Uꜱᴇʀ Iᴅ :- {user_id}</b>"
     )
 
 @Client.on_callback_query(filters.regex(r"^next"))
@@ -972,8 +972,8 @@ async def advantage_spell_chok(client, msg):
     btn = [
         [
             InlineKeyboardButton(
-                text="{movie_name.strip()}•",
-                callback_data=f"spol#{reqstr1}#{k}",
+                text="movie_name.strip()",
+                callback_data=f"spol#{reqstr1}#{k}•",
             )
         ]
         for k, movie_name in enumerate(movielist)
