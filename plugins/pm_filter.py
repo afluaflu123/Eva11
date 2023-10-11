@@ -159,7 +159,7 @@ async def advantage_spoll_choker(bot, query):
     movie = movies[(int(movie_))]
     temp_name = movie.replace(" ", "+")
     button = [[
-        InlineKeyboardButton('♽ Mᴏᴠɪᴇ Rᴇᴏ̨ᴜᴇsᴛ Gʀᴏᴜᴘ ♽", url="t.me/+3sc743KKHWoxZDY1")
+        InlineKeyboardButton("♽ Mᴏᴠɪᴇ Rᴇᴏ̨ᴜᴇsᴛ Gʀᴏᴜᴘ ♽", url="t.me/+3sc743KKHWoxZDY1")
     ]]
     await query.message.edit(script.CHK_MOV_TXT)  #checkthemovie in db script
     k = await manual_filters(bot, query.message, text=movie)
