@@ -167,7 +167,7 @@ async def advantage_spoll_choker(bot, query):
             await auto_filter(bot, query, k)
         else:
             k = await query.message.edit(script.MVE_NT_FND)  #scriltmovienotfound
-            await asyncio.sleep(9)
+            await asyncio.sleep(15)
             await k.delete()
 
 @Client.on_callback_query()
@@ -913,7 +913,7 @@ async def auto_filter(client, msg, spoll=False):
             fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
         fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(50)
+    await asyncio.sleep(45)
     await fmsg.delete()
     await message.delete()
     if spoll:
@@ -935,8 +935,11 @@ async def advantage_spell_chok(client, msg):
         logger.exception(e)
         reqst_gle = mv_rqst.replace(" ", "+")
         button = [[
-        InlineKeyboardButton('🔍 ѕєαяϲн οи gοοgℓє​ 🔎', url=f"https://www.google.com/search?q={reqst_gle}")            
-        ]]        
+        InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={mv_rqst}'),
+        InlineKeyboardButton(' 🔍 IMDB 🔎', url=f'https://www.imdb.com/find/?q={mv_rqst}&ref_=nv_sr_sm')
+        ],[
+        InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+        ]]
         k = await msg.reply_text(
             text=("<b>▪️ᴜꜱᴇ ᴛʜᴇ ʙᴇʟᴏᴡ Gᴏᴏɢʟᴇ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄᴏᴘʏ ᴛʜᴇ ᴄᴏʀʀᴇᴄᴛ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ᴀɴᴅ ᴘᴀꜱᴛᴇ 😌\n\n▪️താഴെ കാണുന്ന ഗൂഗിൾ ബട്ടൺ ക്ലിക്ക് ചെയ്ത് കറക്റ്റ് സ്പെല്ലിങ് കോപ്പി ചെയ്ത ശേഷം ഗ്രൂപ്പിൽ സെർച്ച്‌ ചെയ്യുക 🤗</b>"),
             reply_markup=InlineKeyboardMarkup(button),
@@ -950,8 +953,11 @@ async def advantage_spell_chok(client, msg):
     if not movies:
         reqst_gle = mv_rqst.replace(" ", "+")
         button = [[
-        InlineKeyboardButton('🔍 ѕєαяϲн οи gοοgℓє​ 🔎', url=f"https://www.google.com/search?q={reqst_gle}")   
-        ]]        
+        InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q={mv_rqst}'),
+        InlineKeyboardButton(' 🔍 IMDB 🔎', url=f'https://www.imdb.com/find/?q={mv_rqst}&ref_=nv_sr_sm')
+        ],[
+        InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
+        ]]
         k = await msg.reply_text(
             text=("<b>▪️ᴜꜱᴇ ᴛʜᴇ ʙᴇʟᴏᴡ Gᴏᴏɢʟᴇ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄᴏᴘʏ ᴛʜᴇ ᴄᴏʀʀᴇᴄᴛ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ᴀɴᴅ ᴘᴀꜱᴛᴇ 😌\n\n▪️താഴെ കാണുന്ന ഗൂഗിൾ ബട്ടൺ ക്ലിക്ക് ചെയ്ത് കറക്റ്റ് സ്പെല്ലിങ് കോപ്പി ചെയ്ത ശേഷം ഗ്രൂപ്പിൽ സെർച്ച്‌ ചെയ്യുക 🤗</b>"),
             reply_markup=InlineKeyboardMarkup(button),
