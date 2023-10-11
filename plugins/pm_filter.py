@@ -172,7 +172,8 @@ async def advantage_spoll_choker(bot, query):
         else:
             k = await query.message.edit(
                 text=script.MVE_NT_FND,
-                reply_markup=InlineKeyboardMarkup(button))  #scriltmovienotfound
+                reply_markup=InlineKeyboardMarkup(button)
+            ) 
             await asyncio.sleep(20)
             await k.delete()
 
