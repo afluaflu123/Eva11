@@ -164,6 +164,10 @@ Request Again"""
 ◉) check your correct spelling..!
 ◉) Movie Is Not Available in My Database..!
 ◉) Not Available Theater Print 🥴..!</b>"""
+
+    CUDNT_FND = """<b>✯ Nᴏ Mᴏᴠɪᴇ Fᴏᴜɴᴅ Fᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ <u>{}</u>
+
+✯ Cʜᴏᴏsᴇ Tʜᴇ Cᴏʀʀᴇᴄᴛ Mᴏᴠɪᴇ Nᴀᴍᴇ Bᴇʟᴏᴡ 👇</b>​"""
        
     LOG_TEXT_G = """#NewGroup
 Group = {}(<code>{}</code>)
