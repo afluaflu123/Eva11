@@ -62,9 +62,9 @@ Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ 
 ⛦ RᴀTɪNɢ : {rating} / 10.0
 〄 QᴜAʟIᴛY : HDRip</b>"""
    
-    CUSTOM_FILE_CAPTION = """<b>⋟ Fɪʟᴇ Nᴀᴍᴇ :- {file_name}
+    CUSTOM_FILE_CAPTION = """<b>🗂️ Fɪʟᴇ Nᴀᴍᴇ :- {file_name}
 
-⋟ Fɪʟᴇ Sɪᴢᴇ :- {file_size}
+🧩 Fɪʟᴇ Sɪᴢᴇ :- {file_size}
 
 ⋟ @KLMovieGroup       
 ⋟ @KL_Group2</b>"""
