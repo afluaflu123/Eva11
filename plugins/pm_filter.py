@@ -36,6 +36,9 @@ logger.setLevel(logging.ERROR)
 
 BUTTONS = {}
 SPELL_CHECK = {}
+CLICK = {}
+
+max_clicks = 1
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
@@ -412,7 +415,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.answer('𝘾𝙝𝙚𝙘𝙠 𝙋𝙈, 𝙄 𝙝𝙖𝙫𝙚 𝙨𝙚𝙣𝙩 𝙛𝙞𝙡𝙚𝙨 𝙞𝙣 𝙥𝙢', show_alert=True)
                 return
             else:
-                file_send=await client.send_cached_media(
+                if button_data in CLICK and CLICK[button_data] >= max_clicks:
+                    await query.answer("okda 😋", show_alert=True)
+                    return
+                hack = await client.send_cached_media(
                     chat_id=FILE_CHANNEL,
                     file_id=file_id,
                     caption=script.CHANNEL_CAP.format(query.from_user.mention, title, query.message.chat.title),
@@ -425,7 +431,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         ]
                     )
                 )
-                Joel_tgx = await query.message.reply_text(
+                jr = await query.message.reply_text(
                     script.FILE_MSG.format(query.from_user.mention, title, size),
                     parse_mode=enums.ParseMode.HTML,
                     reply_markup=InlineKeyboardMarkup(
@@ -438,9 +444,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         ]
                     )
                 )
+                CLICK[button_data] = CLICK.get(button_data, 0) + 1
                 await asyncio.sleep(60)
-                await Joel_tgx.delete()
-                await file_send.delete()
+                await jr.delete()
+                await hack.delete()
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !', show_alert=True)
         except PeerIdInvalid:
