@@ -543,7 +543,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Aᴜᴛᴏ Fɪʟᴛᴇʀ', callback_data='autofilter')
         ], [
             InlineKeyboardButton('Cᴏɴɴᴇᴄᴛɪᴏɴꜱ', callback_data='coct'),
-            InlineKeyboardButton('Exᴛʀᴀ Mᴏᴅꜱ', callback_data='extra')   
+            InlineKeyboardButton('Exᴛʀᴀ Mᴏᴅꜱ', callback_data='extra'),            
+            InlineKeyboardButton('Sᴛᴀᴛᴜs', callback_data='stats')
         ], [
             InlineKeyboardButton('⇍ Bᴀᴄᴋ Tᴏ Hᴏᴍᴇ ⇏', callback_data='start')            
         ]]
@@ -695,7 +696,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer("🤔 Tʜɪɴᴋ Yᴏᴜ. Aʀᴇ Yᴏᴜ Nᴏᴛ Mʏ Aᴅᴍɪɴ..? Sᴏ Tʜɪꜱ Cᴏᴍᴍᴇɴᴛ Iꜱ Nᴏᴛ Fᴏʀ Yᴏᴜ 🤗", show_alert=True)        
     elif query.data == "stats":
         buttons = [[
-            InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='about'),
+            InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='help'),
             InlineKeyboardButton('↺ 𝘳ꫀᠻ𝘳ꫀ𝘴ꫝ', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -714,7 +715,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "rfrsh":
         await query.answer("𝐹𝐸𝑇𝐶𝐻𝐼𝑁𝐺 𝑀𝑂𝑁𝐺𝑂𝐷𝐵 𝐷𝐴𝑇𝐴𝐵𝐴𝑆𝐸𝑆")
         buttons = [[
-            InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='about'),
+            InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='help'),
             InlineKeyboardButton('↺ 𝘳ꫀᠻ𝘳ꫀ𝘴ꫝ', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
