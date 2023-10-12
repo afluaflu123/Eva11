@@ -36,6 +36,7 @@ logger.setLevel(logging.ERROR)
 
 BUTTONS = {}
 SPELL_CHECK = {}
+BOT_START_TIME = time.time()
 CLICK = {}
 
 max_clicks = 1
@@ -504,16 +505,27 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("✯ Movies - Jailer 2023\n✯ Series - Dark S01E01\n\n✯ Correct Spelling in English Letters Only And ❌ Don't Use Stylish Font\n\n✯ Not Available Theater Print Files !\n\n ➠ © @Team_KL", show_alert=True)        
     elif query.data == "pages":
         await query.answer()
+
+    elif query.data == "statx":
+        currentTime = time.strftime("%Hh%Mm%Ss", time.gmtime(time.time() - BOT_START_TIME))
+        total, used, free = shutil.disk_usage(".")
+        total = humanbytes(total)
+        used = humanbytes(used)
+        free = humanbytes(free)
+        cpu_usage = psutil.cpu_percent()
+        ram_usage = psutil.virtual_memory().percent
+        disk_usage = psutil.disk_usage('/').percent
+        await query.answer(f"⚡️ Sʏsᴛᴇᴍ Sᴛᴀᴛᴜs ⚡️\n\n❂ Uᴘᴛɪᴍᴇ : {currentTime}\n✇ Cᴘᴜ : {cpu_usage}\n✪ Rᴀᴍ : {ram_usage}\n✼ Tᴏᴛᴀʟ Dɪsᴋ : {total}\n❐ Usᴇᴅ Sᴘᴀᴄᴇ : {used} ({disk_usage}%)\n❦ Fʀᴇᴇ Sᴘᴀᴄᴇ : {free}\n\nᴠ2.9.1 [sᴛᴀʙʟᴇ]", show_alert=True)
     
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('👨🏻‍🎓 Bᴏᴛ Oᴡɴᴇʀ', callback_data="owner_info")
+            InlineKeyboardButton('🎭 Bᴏᴛ Oᴡɴᴇʀ', callback_data="owner_info"),
+            InlineKeyboardButton('🕵️ Sᴇᴀʀᴄʜ', switch_inline_query_current_chat='')            
             ],[      
-            InlineKeyboardButton('💠 Hᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('🌿 Aʙᴏᴜᴛ', callback_data='about')
+            InlineKeyboardButton('✨ Hᴇʟᴘ', callback_data='help'),
+            InlineKeyboardButton('🔮 Aʙᴏᴜᴛ', callback_data='about')
             ],[
-            InlineKeyboardButton('🎭 Tᴇᴀᴍ Kʟ Oꜰꜰɪᴄɪᴀʟ Lɪɴᴋs 🎭', callback_data="group_info")
+            InlineKeyboardButton('🏮 Tᴇᴀᴍ Kʟ Oꜰꜰɪᴄɪᴀʟ Lɪɴᴋs 🏮', callback_data="group_info")
         ]]   
         reply_markup = InlineKeyboardMarkup(buttons)
         T = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
@@ -561,7 +573,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )            
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('〄 Sᴛᴀᴛᴜs', callback_data='stats'),
+            InlineKeyboardButton('ᠰ Sᴇʀᴠᴇʀ Iɴꜰᴏ', callback_data='statx'),
             InlineKeyboardButton('✇ Sᴏᴜʀᴄᴇ', callback_data='source')
         ], [
             InlineKeyboardButton('⇍ Hᴏᴍᴇ', callback_data='start'),
@@ -675,7 +687,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )       
     elif query.data == "group_info":
         buttons = [[
-            InlineKeyboardButton("⟁ Sᴜʙsᴄʀɪʙᴇ Yᴏᴜᴛᴜʙᴇ Cʜᴀɴɴᴇʟ ⟁", url="https://www.youtube.com/@FoxMoviesHub")         
+            InlineKeyboardButton("⟁ Sᴜʙsᴄʀɪʙᴇ Yᴏᴜᴛᴜʙᴇ Cʜᴀɴɴᴇʟ ⟁", url="https://youtube.com/shorts/v66wWBXzVYY?si=s5hpGq5p1jCFe6fR")         
                   ],[
             InlineKeyboardButton("• Tᴇᴀᴍ Kʟ Mᴀɪɴ Cʜᴀɴɴᴇʟ •", url="t.me/team_kl")
                   ],[
