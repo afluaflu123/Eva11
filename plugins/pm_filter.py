@@ -492,7 +492,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
 
     elif query.data == "ximdb":
-        search = message.text
         cap = TEMPLATE.format(
             query=search,
             title=imdb['title'],
