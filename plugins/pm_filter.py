@@ -636,7 +636,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                   ],[           
             InlineKeyboardButton("• കേരള റോക്കേഴ്സ് [Nᴇᴡ Gʀᴏᴜᴘ] •", url="https://t.me/+3sc743KKHWoxZDY1")
                   ],[
-            InlineKeyboardButton("⇍ Aʙᴏᴜᴛ Bᴀᴄᴋ Tᴏ Hᴏᴍᴇ ⇏", callback_data="start")
+            InlineKeyboardButton("⇍ Bᴀᴄᴋ Tᴏ Hᴏᴍᴇ ⇏", callback_data="start")
         ]]   
         reply_markup = InlineKeyboardMarkup(buttons)        
         await client.edit_message_media(
@@ -913,7 +913,7 @@ async def auto_filter(client, msg, spoll=False):
             fmsg = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
         fmsg = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(45)
+    await asyncio.sleep(55)
     await fmsg.delete()
     await message.delete()
     if spoll:
@@ -935,8 +935,8 @@ async def advantage_spell_chok(client, msg):
         logger.exception(e)
         reqst_gle = mv_rqst.replace(" ", "+")
         button = [[
-        InlineKeyboardButton('⌬ ᧁꪮꪮᧁꪶꫀ ⌬', url=f'https://google.com/search?q={mv_rqst}'),
-        InlineKeyboardButton('✽ 𝓲ꪑᦔ᥇ ✽', url=f'https://www.imdb.com/find/?q={mv_rqst}&ref_=nv_sr_sm')
+        InlineKeyboardButton('⌬ ᧁꪮꪮᧁꪶꫀ ⌬', url=f'https://google.com/search?q={reqst_gle}'),
+        InlineKeyboardButton('✽ 𝓲ꪑᦔ᥇ ✽', url=f'https://www.imdb.com/find/?q={reqst_gle}&ref_=nv_sr_sm')
         ]]
         k = await msg.reply_photo(
             photo=SPELL_IMG, 
@@ -952,8 +952,8 @@ async def advantage_spell_chok(client, msg):
     if not movies:
         reqst_gle = mv_rqst.replace(" ", "+")
         button = [[
-        InlineKeyboardButton('⌬ ᧁꪮꪮᧁꪶꫀ ⌬', url=f'https://google.com/search?q={mv_rqst}'),
-        InlineKeyboardButton('✽ 𝓲ꪑᦔ᥇ ✽', url=f'https://www.imdb.com/find/?q={mv_rqst}&ref_=nv_sr_sm')
+        InlineKeyboardButton('⌬ ᧁꪮꪮᧁꪶꫀ ⌬', url=f'https://google.com/search?q={reqst_gle}'),
+        InlineKeyboardButton('✽ 𝓲ꪑᦔ᥇ ✽', url=f'https://www.imdb.com/find/?q={reqst_gle}&ref_=nv_sr_sm')
         ]]
         k = await msg.reply_photo(
             photo=SPELL_IMG, 
