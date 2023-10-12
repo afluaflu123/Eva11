@@ -127,9 +127,7 @@ Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ 
 • /channel - <code>to get list of total connected channels</code>
 • /broadcast - <code>to broadcast a message to all users</code>
 • /bcspeed - <code>to speed broadcast a message to all users</code>
-• /grp_broadcast - <code>to broadcast a message to all groups</code>
-• /setskip - <code>Skip no of files before indexing</code>
-• /deletefiles - <code>Delete CamRip and PreDvD files delete from database </code>"""
+• /grp_broadcast - <code>to broadcast a message to all groups</code>"""
 
     FIlTERS_TXT = """
 <b>Tʜᴇsᴇ Aʀᴇ Mʏ Tʜʀᴇᴇ Tʏᴘᴇs Oғ Fɪʟᴛᴇʀs.</b>"""
