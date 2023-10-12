@@ -110,7 +110,7 @@ async def next_page(bot, query):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'⎙ Fɪʟᴇs: {total}', 'neosub'),
+            InlineKeyboardButton(f'⇓ {search} ⇓', 'neosub'),
             InlineKeyboardButton(f'⌗ Iɴꜰᴏ', 'reqinfo')
         ]
     )
