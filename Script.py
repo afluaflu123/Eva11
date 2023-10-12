@@ -145,13 +145,11 @@ Request Again"""
 
     CHK_MOV_TXT = """<b>Sᴇᴀʀᴄʜɪɴɢ Rᴇꜱᴜʟᴛꜱ. 🥴</b>"""
 
-    SPEL_CHK = """<b>🥺 Sorry No File Found {} 
+    SPEL_CHK = """<b>🥺 Sorry No File Found <u>{}</u>
 
 ▫️Use The Button Below To Search On <u>Google</u> Or <u>IMDB</u> And Copy The Correct Movie Name And Paste..!!
 
 ▪️Don't Ask Movies That Are Not Released In OTT Platform..!!
-
-▫️Request With Correct Spelling..!!
 
 ▪️Try To Ask In [Moviename, Year, Language] This Format..!! 
 
