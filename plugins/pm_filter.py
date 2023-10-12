@@ -539,7 +539,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('⏤͟͟͞ ♡ Nᴀɴᴄʏ ᵛ³·⁰ 🦄')
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('Fɪʟᴛᴇʀ', callback_data='filter'),     
+            InlineKeyboardButton('Fɪʟᴛᴇʀ', callback_data='filters'),     
             InlineKeyboardButton('Fɪʟᴇ Sᴛᴏʀᴇ', callback_data='store_file')
         ], [
             InlineKeyboardButton('Cᴏɴɴᴇᴄᴛɪᴏɴꜱ', callback_data='coct'),
@@ -594,7 +594,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )   
     elif query.data == "gfilter":
         buttons = [[
-            InlineKeyboardButton('⇍Bᴀᴄᴋ', callback_data='filters')
+            InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='filters')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         if query.from_user.id in ADMINS:
@@ -628,7 +628,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "manuelfilter":
         buttons = [[
-            InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='filter'),
+            InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='filters'),
             InlineKeyboardButton('⍞ Bᴜᴛᴛᴏɴs', callback_data='button')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -649,7 +649,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "autofilter":
         buttons = [[
-            InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='filter')
+            InlineKeyboardButton('⇍ Bᴀᴄᴋ', callback_data='filter's)
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
