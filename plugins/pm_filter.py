@@ -110,7 +110,7 @@ async def next_page(bot, query):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f'⎙ Fɪʟᴇs: {total}', 'ximdb'),
+            InlineKeyboardButton(f'⎙ Fɪʟᴇs: {total}', 'neosub'),
             InlineKeyboardButton(f'⌗ Iɴꜰᴏ', 'reqinfo')
         ]
     )
@@ -490,16 +490,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("✯ Movies - Jailer 2023\n✯ Series - Dark S01E01\n\n✯ Correct Spelling in English Letters Only And ❌ Don't Use Stylish Font\n\n✯ Not Available Theater Print Files !\n\n ➠ © @Team_KL", show_alert=True)        
     elif query.data == "pages":
         await query.answer()
-
-    elif query.data == "ximdb":
-        cap = TEMPLATE.format(
-            query=search,
-            title=imdb['title'],
-            rating=imdb['rating'],
-            languages=imdb["languages"],
-            year=imdb['year'])
-        await query.answer(f"⍞ Tɪᴛɪʟᴇ : {search}\n⌬ YᴇAʀ : {year}\n✇ LᴀNɢUᴀGᴇ : {languages}\n⛦ RᴀTɪNɢ : {rating} / 10.0\n〄 QᴜAʟIᴛY : HDRip", show_alert=True)
-        
+    
     elif query.data == "start":
         buttons = [[
             InlineKeyboardButton('🔍 Sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
@@ -857,7 +848,7 @@ async def auto_filter(client, msg, spoll=False):
         ]
     btn.insert(0, 
         [
-            InlineKeyboardButton(f"⇓ {search} ⇓", "ximdb"),
+            InlineKeyboardButton(f"⇓ {search} ⇓", "neosub"),
             InlineKeyboardButton(f"⌗ Iɴꜰᴏ", "reqinfo")       
         ]
     )
