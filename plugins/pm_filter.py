@@ -493,13 +493,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "ximdb":
         search = message.text
-        TEMPLATE.format(
+        cap = TEMPLATE.format(
             query=search,
             title=imdb['title'],
             rating=imdb['rating'],
             languages=imdb["languages"],
             year=imdb['year'])
-        await query.answer(f"⍞ Tɪᴛɪʟᴇ : {search}\n⌬ YᴇAʀ : {year}\n✇ LᴀNɢUᴀGᴇ : {languages}\n⛦ RᴀTɪNɢ : {rating} / 10.0\n〄 QᴜAʟIᴛY : HDRip", show_alert=True))
+        await query.answer(f"⍞ Tɪᴛɪʟᴇ : {search}\n⌬ YᴇAʀ : {year}\n✇ LᴀNɢUᴀGᴇ : {languages}\n⛦ RᴀTɪNɢ : {rating} / 10.0\n〄 QᴜAʟIᴛY : HDRip", show_alert=True)
         
     elif query.data == "start":
         buttons = [[
