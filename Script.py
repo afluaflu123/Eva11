@@ -55,7 +55,7 @@ Mʏ Nᴀᴍᴇ Is <a href=https://t.me/{}>{}</a>, Yᴏᴜ Cᴀɴ Usᴇ Mᴇ Iɴ 
 • /disconnect  - <code>disconnect from a chat</code>
 • /connections - <code>list all your connections</code>"""
 
-     IMDB_TEMPLATE_TXT = """
+    IMDB_TEMPLATE_TXT = """
 <b>⍞ TɪᴛLᴇ : {title}
 ⌬ YᴇAʀ : {year}
 ✇ LᴀNɢUᴀGᴇ : {languages}
