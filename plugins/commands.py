@@ -25,8 +25,8 @@ BATCH_FILES = {}
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[
-                InlineKeyboardButton('• ᴄʜᴀɴɴᴇʟ •', url='https://t.me/team_kl'),
-                InlineKeyboardButton('• ᴄʜᴇᴄᴋ ᴘᴍ •', url=f"https://t.me/{temp.U_NAME}?start=help"),
+                InlineKeyboardButton('• Cʜᴀɴɴᴇʟ •', url='https://t.me/team_kl'),
+                InlineKeyboardButton('• Cʜᴇᴄᴋ Pᴍ •', url=f"https://t.me/{temp.U_NAME}?start=help"),
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         k = await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
@@ -43,14 +43,14 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
         buttons = [[            
-            InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('👨🏻‍🎓 ᴏᴡɴᴇʀ', callback_data="owner_info")
+            InlineKeyboardButton('🎭 Bᴏᴛ Oᴡɴᴇʀ', callback_data="owner_info"),
+            InlineKeyboardButton('🕵️ Sᴇᴀʀᴄʜ', switch_inline_query_current_chat='')            
             ],[      
-            InlineKeyboardButton('💠 ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('🌿 ᴀʙᴏᴜᴛ', callback_data='about')
+            InlineKeyboardButton('✨ Hᴇʟᴘ', callback_data='help'),
+            InlineKeyboardButton('🔮 Aʙᴏᴜᴛ', callback_data='about')
             ],[
-            InlineKeyboardButton('🥇 ᴛᴇᴀᴍ ᴋʟ ᴏꜰꜰɪᴄɪᴀʟ ʟɪɴᴋs 🥇', callback_data="group_info")
-        ]]         
+            InlineKeyboardButton('🏮 Tᴇᴀᴍ Kʟ Oꜰꜰɪᴄɪᴀʟ Lɪɴᴋs 🏮', callback_data="group_info")
+        ]]   
         reply_markup = InlineKeyboardMarkup(buttons)        
         T = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
         Time = T.hour        
@@ -78,14 +78,14 @@ async def start(client, message):
             await ForceSub(client, message)
             return
         buttons = [[            
-            InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('👨🏻‍🎓 ᴏᴡɴᴇʀ', callback_data="owner_info")
+            InlineKeyboardButton('🎭 Bᴏᴛ Oᴡɴᴇʀ', callback_data="owner_info"),
+            InlineKeyboardButton('🕵️ Sᴇᴀʀᴄʜ', switch_inline_query_current_chat='')            
             ],[      
-            InlineKeyboardButton('💠 ʜᴇʟᴘ', callback_data='help'),
-            InlineKeyboardButton('🌿 ᴀʙᴏᴜᴛ', callback_data='about')
+            InlineKeyboardButton('✨ Hᴇʟᴘ', callback_data='help'),
+            InlineKeyboardButton('🔮 Aʙᴏᴜᴛ', callback_data='about')
             ],[
-            InlineKeyboardButton('🥇 ᴛᴇᴀᴍ ᴋʟ ᴏꜰꜰɪᴄɪᴀʟ ʟɪɴᴋs 🥇', callback_data="group_info")
-        ]]         
+            InlineKeyboardButton('🏮 Tᴇᴀᴍ Kʟ Oꜰꜰɪᴄɪᴀʟ Lɪɴᴋs 🏮', callback_data="group_info")
+        ]]   
         reply_markup = InlineKeyboardMarkup(buttons)
         T = datetime.datetime.now(pytz.timezone("Asia/Kolkata"))
         Time = T.hour        
