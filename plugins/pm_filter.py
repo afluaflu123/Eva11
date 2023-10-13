@@ -681,7 +681,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto("https://telegra.ph/file/9a790ac02f21aa343e3d3.jpg")
+            InputMediaPhoto("https://telegra.ph/file/ade000e7f62811d851317.jpg")
         )
         await query.message.edit_text(
             text=script.OWNER_INFO,
