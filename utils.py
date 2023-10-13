@@ -10,7 +10,7 @@ from typing import Union
 import re
 import os
 from datetime import datetime
-from typing import List, AsyncGenerator
+from typing import List, Any, Union, Optional, AsyncGenerator
 from database.users_chats_db import db
 from bs4 import BeautifulSoup
 import requests
