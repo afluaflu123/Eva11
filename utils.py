@@ -39,6 +39,8 @@ class temp(object):
     MELCOW = {}
     U_NAME = None
     B_NAME = None
+    USERS_CANCEL = False
+    GROUPS_CANCEL = False
     SETTINGS = {}
 
 async def is_subscribed(bot, query):
@@ -170,6 +172,21 @@ async def broadcast_messages(user_id, message):
     except Exception as e:
         return False, "Error"
 
+async def groups_broadcast_messages(chat_id, message):
+    try:
+        k = await message.copy(chat_id=chat_id)
+        try:
+            await k.pin()
+        except:
+            pass
+        return "Success"
+    except FloodWait as e:
+        await asyncio.sleep(e.value)
+        return await groups_broadcast_messages(chat_id, message)
+    except Exception as e:
+        await db.delete_chat(chat_id)
+        return "Error
+
 async def search_gagala(text):
     usr_agent = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) '
@@ -288,7 +305,6 @@ def last_online(from_user):
     elif from_user.status == enums.UserStatus.OFFLINE:
         time += from_user.last_online_date.strftime("%a, %d %b %Y, %H:%M:%S")
     return time
-
 
 def split_quotes(text: str) -> List:
     if not any(text.startswith(char) for char in START_CHAR):
@@ -436,6 +452,14 @@ def remove_escapes(text: str) -> str:
             res += text[counter]
     return res
 
+def get_readable_time(seconds):
+    periods = [('d', 86400), ('h', 3600), ('m', 60), ('s', 1)]
+    result = ''
+    for period_name, period_seconds in periods:
+        if seconds >= period_seconds:
+            period_value, seconds = divmod(seconds, period_seconds)
+            result += f'{int(period_value)}{period_name}'
+    return result
 
 def humanbytes(size):
     if not size:
