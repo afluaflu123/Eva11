@@ -9,6 +9,7 @@ bs4
 git+https://github.com/Joelkb/cinemagoer
 aiofiles
 aiohttp==3.7.4
+psutil==5.9.4
 datetime
 pytz
 aiohttp
