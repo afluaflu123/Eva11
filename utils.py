@@ -10,7 +10,7 @@ from typing import Union
 import re
 import os
 from datetime import datetime
-from typing import List
+from typing import List, AsyncGenerator
 from database.users_chats_db import db
 from bs4 import BeautifulSoup
 import requests
@@ -39,8 +39,8 @@ class temp(object):
     MELCOW = {}
     U_NAME = None
     B_NAME = None
-    USERS_CANCEL = False
-    GROUPS_CANCEL = False
+    CURRENT=0
+    CANCEL = False
     SETTINGS = {}
 
 async def is_subscribed(bot, query):
