@@ -705,7 +705,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await client.edit_message_media(
             query.message.chat.id, 
             query.message.id, 
-            InputMediaPhoto("https://graph.org/file/ee19a2739a0a082b0ca9a.jpg")
+            InputMediaPhoto("https://telegra.ph/file/397c2cf3d050c643c0ff6.jpg")
         )
         await query.message.edit_text(
             text=script.GROUP_INFO,
