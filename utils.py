@@ -209,7 +209,7 @@ async def groups_broadcast_messages(chat_id, message):
         return await groups_broadcast_messages(chat_id, message)
     except Exception as e:
         await db.delete_chat(chat_id)
-        return "Error
+        return "Error"
 
 
 async def search_gagala(text):
