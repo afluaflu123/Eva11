@@ -188,28 +188,23 @@ async def iter_messages(client, chat_id: Union[int, str], limit: int, offset: in
 async def broadcast_messages(user_id, message):
     try:
         await message.copy(chat_id=user_id)
-        return "Success"
+        return True, "Success"
     except FloodWait as e:
-        await asyncio.sleep(e.value)
+        await asyncio.sleep(e.x)
         return await broadcast_messages(user_id, message)
-    except Exception as e:
+    except InputUserDeactivated:
         await db.delete_user(int(user_id))
-        return "Error"
-
-async def groups_broadcast_messages(chat_id, message):
-    try:
-        k = await message.copy(chat_id=chat_id)
-        try:
-            await k.pin()
-        except:
-            pass
-        return "Success"
-    except FloodWait as e:
-        await asyncio.sleep(e.value)
-        return await groups_broadcast_messages(chat_id, message)
+        logging.info(f"{user_id}-Removed from Database, since deleted account.")
+        return False, "Deleted"
+    except UserIsBlocked:
+        logging.info(f"{user_id} -Blocked the bot.")
+        return False, "Blocked"
+    except PeerIdInvalid:
+        await db.delete_user(int(user_id))
+        logging.info(f"{user_id} - PeerIdInvalid")
+        return False, "Error"
     except Exception as e:
-        await db.delete_chat(chat_id)
-        return "Error"
+        return False, "Error""
 
 
 async def search_gagala(text):
