@@ -204,7 +204,7 @@ async def broadcast_messages(user_id, message):
         logging.info(f"{user_id} - PeerIdInvalid")
         return False, "Error"
     except Exception as e:
-        return False, "Error""
+        return False, "Error"
 
 
 async def search_gagala(text):
