@@ -151,26 +151,50 @@ async def get_poster(query, bulk=False, id=False, file=None):
     }
 # https://github.com/odysseusmax/animated-lamp/blob/2ef4730eb2b5f0596ed6d03e7b05243d93e3415b/bot/utils/broadcast.py#L37
 
+async def iter_messages(client, chat_id: Union[int, str], limit: int, offset: int = 0) -> Optional[AsyncGenerator["types.Message", None]]:
+    """Iterate through a chat sequentially.
+    This convenience method does the same as repeatedly calling :meth:`~pyrogram.Client.get_messages` in a loop, thus saving
+    you from the hassle of setting up boilerplate code. It is useful for getting the whole chat messages with a
+    single call.
+    Parameters:
+        chat_id (``int`` | ``str``):
+            Unique identifier (int) or username (str) of the target chat.
+            For your personal cloud (Saved Messages) you can simply use "me" or "self".
+            For a contact that exists in your Telegram address book you can use his phone number (str).
+                
+        limit (``int``):
+            Identifier of the last message to be returned.
+                
+        offset (``int``, *optional*):
+            Identifier of the first message to be returned.
+            Defaults to 0.
+    Returns:
+        ``Generator``: A generator yielding :obj:`~pyrogram.types.Message` objects.
+    Example:
+        .. code-block:: python
+            for message in app.iter_messages("pyrogram", 1, 15000):
+                print(message.text)
+    """
+    current = offset
+    while True:
+        new_diff = min(200, limit - current)
+        if new_diff <= 0:
+            return
+        messages = await client.get_messages(chat_id, list(range(current, current+new_diff+1)))
+        for message in messages:
+            yield message
+            current += 1
+
 async def broadcast_messages(user_id, message):
     try:
         await message.copy(chat_id=user_id)
-        return True, "Success"
+        return "Success"
     except FloodWait as e:
-        await asyncio.sleep(e.x)
+        await asyncio.sleep(e.value)
         return await broadcast_messages(user_id, message)
-    except InputUserDeactivated:
-        await db.delete_user(int(user_id))
-        logging.info(f"{user_id}-Removed from Database, since deleted account.")
-        return False, "Deleted"
-    except UserIsBlocked:
-        logging.info(f"{user_id} -Blocked the bot.")
-        return False, "Blocked"
-    except PeerIdInvalid:
-        await db.delete_user(int(user_id))
-        logging.info(f"{user_id} - PeerIdInvalid")
-        return False, "Error"
     except Exception as e:
-        return False, "Error"
+        await db.delete_user(int(user_id))
+        return "Error"
 
 async def groups_broadcast_messages(chat_id, message):
     try:
@@ -186,6 +210,7 @@ async def groups_broadcast_messages(chat_id, message):
     except Exception as e:
         await db.delete_chat(chat_id)
         return "Error
+
 
 async def search_gagala(text):
     usr_agent = {
