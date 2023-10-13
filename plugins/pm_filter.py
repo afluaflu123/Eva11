@@ -181,7 +181,7 @@ async def advantage_spoll_choker(bot, query):
                 text=script.MVE_NT_FND,
                 reply_markup=InlineKeyboardMarkup(button)
             ) 
-            await asyncio.sleep(25)
+            await asyncio.sleep(35)
             await k.delete()
 
 @Client.on_callback_query()
@@ -976,7 +976,7 @@ async def auto_filter(client, msg, spoll=False):
             fmsg = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
         fmsg = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(55)
+    await asyncio.sleep(65)
     await fmsg.delete()
     await message.delete()
     if spoll:
@@ -1045,7 +1045,7 @@ async def advantage_spell_chok(client, msg):
         reply_markup=InlineKeyboardMarkup(btn),
         reply_to_message_id=msg.id
     )
-    await asyncio.sleep(25)
+    await asyncio.sleep(35)
     await spell_check_del.delete()
     await msg.delete()
 
