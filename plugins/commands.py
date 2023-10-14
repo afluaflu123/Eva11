@@ -26,7 +26,7 @@ async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [[
                 InlineKeyboardButton('• Cʜᴀɴɴᴇʟ •', url='https://t.me/team_kl'),
-                InlineKeyboardButton('• Cʜᴇᴄᴋ Pᴍ •', url=f"https://t.me/{temp.U_NAME}?start=help"),
+                InlineKeyboardButton('• Cʜᴇᴄᴋ Pᴍ •', url=f"https://t.me/{temp.U_NAME}?start=help")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
