@@ -384,13 +384,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer(alert, show_alert=True)
     if query.data.startswith("file"):
         ident, file_id = query.data.split("#")
-        clicked = query.from_user.id
-        try:
-            typed = query.message.reply_to_message.from_user.id
-        except:
-            typed = clicked
-        if typed != clicked:
-            return await query.answer(script.ALRT_TXT.format(query.from_user.first_name), show_alert=True)
         files_ = await get_file_details(file_id)
         if not files_:
             return await query.answer('No such file exist.')
